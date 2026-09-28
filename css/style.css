@@ -1,0 +1,380 @@
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+  --red: #e3350d;
+  --dark-red: #b52a0a;
+  --black: #1a1a1a;
+  --white: #ffffff;
+  --light-gray: #f2f2f2;
+  --gray: #b8b8b8;
+  --blue: #3b82a0;
+  --green: #6dbb5a;
+  --yellow: #ffcb05;
+}
+
+/* ========================================
+   GENERAL
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  background-color: var(--light-gray);
+  color: var(--black);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========================================
+   BACKGROUND GIF
+======================================== */
+
+.page {
+  position: relative;
+}
+
+.page::before {
+  content: "";
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url("https://piraticoctopus.home.blog/wp-content/uploads/2018/10/tumblr_pf9jk0OBYS1rv6iido1_540.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.12;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  height: 80px;
+
+  background-color: var(--red);
+
+  border-bottom: 4px solid var(--dark-red);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========================================
+   BRAND
+======================================== */
+
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.brand h1 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.brand span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: var(--yellow);
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Pokéball */
+
+.pokeball {
+  width: 40px;
+  height: 40px;
+
+  border: 4px solid var(--black);
+  border-radius: 50%;
+
+  background-color: var(--white);
+}
+
+/* ========================================
+   HEADER NAVIGATION
+======================================== */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 32px;
+}
+
+.header-nav a {
+  color: var(--white);
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: var(--yellow);
+}
+
+/* ========================================
+   MUSIC BUTTON
+======================================== */
+
+.music-button {
+  padding: 9px 16px;
+
+  border: 1px solid var(--dark-red);
+  border-radius: 999px;
+
+  background-color: var(--red);
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.music-button:hover {
+  background-color: var(--dark-red);
+}
+
+/* ========================================
+   PAGE LAYOUT
+======================================== */
+
+.page-layout {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 32px;
+
+  display: grid;
+
+  grid-template-columns:
+    235px
+    minmax(0, 1fr)
+    270px;
+
+  gap: 24px;
+}
+
+/* ========================================
+   PANELS
+======================================== */
+
+.navigation-panel,
+.content-panel,
+.sidebar-panel {
+  background-color: var(--white);
+
+  border: 1px solid var(--gray);
+
+  border-radius: 12px;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.navigation-panel {
+  padding: 16px;
+}
+
+.content-panel {
+  min-height: 600px;
+
+  padding: 24px;
+}
+
+.sidebar-panel {
+  padding: 16px;
+}
+
+/* ========================================
+   PANEL TITLES
+======================================== */
+
+.panel-title {
+  margin: 0 0 16px;
+
+  color: var(--dark-red);
+
+  font-size: 10px;
+  font-weight: bold;
+
+  letter-spacing: 0.08em;
+}
+
+/* ========================================
+   LEFT NAVIGATION
+======================================== */
+
+.side-nav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.side-nav a {
+  padding: 12px 16px;
+
+  border-radius: 8px;
+
+  color: var(--black);
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+  background-color: var(--red);
+
+  color: var(--white);
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.content-panel h2 {
+  margin: 0 0 16px;
+
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* ========================================
+   CONTENT PLACEHOLDER
+======================================== */
+
+.content-placeholder {
+  min-height: 450px;
+
+  border: 2px dashed var(--gray);
+
+  border-radius: 8px;
+
+  background-color: var(--light-gray);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-placeholder span {
+  color: var(--gray);
+
+  font-weight: 600;
+}
+
+/* ========================================
+   RIGHT SIDEBAR
+======================================== */
+
+.sidebar-placeholder {
+  min-height: 500px;
+
+  border: 2px dashed var(--gray);
+
+  border-radius: 8px;
+
+  background-color: var(--light-gray);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.sidebar-placeholder span {
+  color: var(--gray);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  min-height: 120px;
+
+  background-color: var(--black);
+
+  border-top: 4px solid var(--dark-red);
+
+  color: var(--white);
+}
+
+.footer-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-container span:first-child {
+  font-weight: bold;
+}
+
+.footer-container span:last-child {
+  color: var(--gray);
+
+  font-size: 14px;
+}
