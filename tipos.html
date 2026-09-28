@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pokémon's World | Inicio</title>
+    <title>Pokémon's World | Tipos</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -26,11 +26,11 @@
 
         <!-- Header navigation -->
         <nav class="header-nav">
-          <a href="index.html" class="active"> Inicio </a>
+          <a href="index.html"> Inicio </a>
 
           <a href="pokedex.html"> Pokédex </a>
 
-          <a href="tipos.html"> Tipos </a>
+          <a href="tipos.html" class="active"> Tipos </a>
 
           <a href="historia.html"> Historia </a>
 
@@ -50,11 +50,11 @@
           <p class="panel-title">NAVEGACIÓN DEL SISTEMA</p>
 
           <nav class="side-nav">
-            <a href="index.html" class="active"> Inicio </a>
+            <a href="index.html"> Inicio </a>
 
             <a href="pokedex.html"> Pokédex </a>
 
-            <a href="tipos.html"> Tipos </a>
+            <a href="tipos.html" class="active"> Tipos </a>
 
             <a href="historia.html"> Historia </a>
 
@@ -68,73 +68,101 @@
         <section class="content-panel">
           <p class="panel-title">CONTENIDO PRINCIPAL</p>
 
-          <!-- HERO -->
-          <div class="hero">
-            <span class="hero-label">POKÉDEX DE FANS</span>
+          <!-- PAGE TITLE -->
+          <h1 class="page-title page-title--underline">Tipos de Pokémon</h1>
 
-            <h1 class="hero-title">Bienvenido, entrenador</h1>
+          <p class="page-intro">
+            Existen 18 tipos. Cada uno tiene fortalezas y debilidades frente a
+            los demás.
+          </p>
 
-            <p class="hero-text">
-              Historia, tipos y enlaces de la saga Pokémon en un solo sitio.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="historia.html">Ver historia</a>
-
-              <a class="btn btn-ghost" href="tipos.html">Ver tipos</a>
-            </div>
-          </div>
-
-          <!-- FEATURE CARDS -->
+          <!-- TYPE GRID -->
           <div class="card-grid card-grid--3">
-            <article class="card">
-              <div class="img-placeholder">
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
 
-              <div class="card-body">
-                <h2 class="card-title">Historia</h2>
+              <p class="type-card-badge">
+                <span class="type-badge fuego">Fuego</span>
+              </p>
 
-                <p class="card-text">
-                  Cómo empezó todo en 1996 y cómo creció la saga.
-                </p>
-
-                <a class="card-link" href="historia.html">Ver historia →</a>
-              </div>
+              <p class="type-card-example">Ejemplo: Charmander</p>
             </article>
 
-            <article class="card">
-              <div class="img-placeholder">
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
 
-              <div class="card-body">
-                <h2 class="card-title">Tipos</h2>
+              <p class="type-card-badge">
+                <span class="type-badge agua">Agua</span>
+              </p>
 
-                <p class="card-text">
-                  Los 18 tipos con imágenes y un video explicativo.
-                </p>
-
-                <a class="card-link" href="tipos.html">Ver tipos →</a>
-              </div>
+              <p class="type-card-example">Ejemplo: Squirtle</p>
             </article>
 
-            <article class="card">
-              <div class="img-placeholder">
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
 
-              <div class="card-body">
-                <h2 class="card-title">Enlaces</h2>
+              <p class="type-card-badge">
+                <span class="type-badge planta">Planta</span>
+              </p>
 
-                <p class="card-text">
-                  Webs oficiales y de la comunidad para seguir aprendiendo.
-                </p>
+              <p class="type-card-example">Ejemplo: Bulbasaur</p>
+            </article>
 
-                <a class="card-link" href="enlaces.html">Ver enlaces →</a>
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
+                <span> IMAGEN </span>
               </div>
+
+              <p class="type-card-badge">
+                <span class="type-badge electrico">Eléctrico</span>
+              </p>
+
+              <p class="type-card-example">Ejemplo: Pikachu</p>
+            </article>
+
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
+                <span> IMAGEN </span>
+              </div>
+
+              <p class="type-card-badge">
+                <span class="type-badge psiquico">Psíquico</span>
+              </p>
+
+              <p class="type-card-example">Ejemplo: Mewtwo</p>
+            </article>
+
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
+                <span> IMAGEN </span>
+              </div>
+
+              <p class="type-card-badge">
+                <span class="type-badge normal">Normal</span>
+              </p>
+
+              <p class="type-card-example">Ejemplo: Eevee</p>
             </article>
           </div>
+
+          <p class="section-actions">
+            <button class="btn btn-primary" type="button">Ver los 18 tipos</button>
+          </p>
+
+          <!-- VIDEO -->
+          <section class="video-block">
+            <h2 class="section-title">Video: los tipos y sus ventajas</h2>
+
+            <div class="video-placeholder">
+              <span> VIDEO </span>
+            </div>
+          </section>
         </section>
       </main>
 

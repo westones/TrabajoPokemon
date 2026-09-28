@@ -28,8 +28,13 @@ body {
   padding: 0;
 }
 
+/* Columna flex: el footer queda siempre pegado al fondo de la ventana
+   aunque el contenido sea mas corto que el viewport. */
 body {
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 
   background-color: var(--light-gray);
   color: var(--black);
@@ -203,6 +208,9 @@ body {
     270px;
 
   gap: 24px;
+
+  /* Absorbe el espacio sobrante: el footer baja al fondo */
+  flex: 1;
 }
 
 /* ========================================
@@ -221,7 +229,16 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
+/* Columna flex para que el panel de navegacion ocupe toda la altura
+   de la fila, igual que hace el sidebar derecho. */
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation-panel {
+  flex: 1;
+
   padding: 16px;
 }
 
@@ -292,57 +309,6 @@ body {
 }
 
 /* ========================================
-   CONTENT PLACEHOLDER
-======================================== */
-
-.content-placeholder {
-  min-height: 450px;
-
-  border: 2px dashed var(--gray);
-
-  border-radius: 8px;
-
-  background-color: var(--light-gray);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.content-placeholder span {
-  color: var(--gray);
-
-  font-weight: 600;
-}
-
-/* ========================================
-   RIGHT SIDEBAR
-======================================== */
-
-.sidebar-placeholder {
-  min-height: 500px;
-
-  border: 2px dashed var(--gray);
-
-  border-radius: 8px;
-
-  background-color: var(--light-gray);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-.sidebar-placeholder span {
-  color: var(--gray);
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* ========================================
    FOOTER
 ======================================== */
 
@@ -365,16 +331,788 @@ body {
   padding: 32px;
 
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 8px;
+
+  text-align: left;
 }
 
-.footer-container span:first-child {
+/* ========================================
+   SIDEBAR LAYOUT
+   ======================================== */
+
+.left-sidebar,
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+/* ========================================
+   AD PLACEHOLDER
+   ======================================== */
+
+.ad-placeholder {
+  border: 2px dashed var(--gray);
+
+  border-radius: 8px;
+
+  background-color: var(--light-gray);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.ad-placeholder span {
+  color: var(--gray);
+
+  font-weight: 600;
+}
+
+.ad-placeholder--tall {
+  min-height: 250px;
+}
+
+.ad-placeholder--wide {
+  min-height: 120px;
+}
+
+/* ========================================
+   FACT BOX
+   ======================================== */
+
+.fact-box {
+  padding: 16px;
+
+  border: 1px solid var(--dark-red);
+
+  border-radius: 12px;
+
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.fact-title {
+  margin: 0 0 8px;
+
+  font-size: 14px;
+  font-weight: bold;
+
+  letter-spacing: 0.04em;
+}
+
+.fact-text {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+
+.footer-copy {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.footer-note {
+  margin: 0;
+
+  color: var(--gray);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* ========================================
+   PAGE TITLES
+   ======================================== */
+
+.page-title {
+  margin: 0 0 12px;
+
+  font-size: 30px;
   font-weight: bold;
 }
 
-.footer-container span:last-child {
+.page-title--underline {
+  padding-bottom: 10px;
+
+  border-bottom: 4px solid var(--red);
+
+  display: inline-block;
+}
+
+.page-intro {
+  margin: 0 0 24px;
+
+  color: var(--black);
+
+  font-size: 16px;
+
+  line-height: 1.6;
+}
+
+/* Selector de dos clases: gana a la regla base .content-panel h2 */
+
+.content-panel .section-title {
+  margin: 32px 0 16px;
+
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.section-actions {
+  margin: 20px 0 0;
+
+  text-align: center;
+}
+
+/* ========================================
+   IMAGE PLACEHOLDER
+   ======================================== */
+
+.img-placeholder {
+  min-height: 140px;
+
+  border: 2px dashed var(--gray);
+
+  border-radius: 8px;
+
+  background-color: var(--light-gray);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.img-placeholder span {
+  padding: 0 8px;
+
   color: var(--gray);
 
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+.img-placeholder--small {
+  min-height: 120px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+  padding: 11px 22px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  font-family: inherit;
   font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-red);
+}
+
+.btn-ghost {
+  border-color: var(--white);
+
+  background-color: transparent;
+  color: var(--white);
+}
+
+.btn-ghost:hover {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.btn-outline {
+  border-color: var(--red);
+
+  background-color: var(--white);
+  color: var(--red);
+}
+
+.btn-outline:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.btn-small {
+  padding: 8px 16px;
+
+  font-size: 13px;
+}
+
+/* ========================================
+   HERO
+   ======================================== */
+
+.hero {
+  margin: 0 0 24px;
+
+  padding: 40px;
+
+  border-radius: 12px;
+
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.hero-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--yellow);
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 0.14em;
+}
+
+.hero-title {
+  margin: 0 0 12px;
+
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.hero-text {
+  max-width: 480px;
+
+  margin: 0 0 24px;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+
+  gap: 12px;
+}
+
+/* ========================================
+   CARD GRIDS
+   ======================================== */
+
+.card-grid {
+  display: grid;
+
+  gap: 20px;
+}
+
+.card-grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ========================================
+   CARDS
+   ======================================== */
+
+.card,
+.pokemon-card,
+.type-card,
+.link-card {
+  border: 1px solid var(--gray);
+
+  border-radius: 12px;
+
+  background-color: var(--white);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.card,
+.pokemon-card,
+.type-card {
+  padding: 16px;
+}
+
+/* Selector de dos clases: gana a la regla base .content-panel h2 */
+
+.content-panel .card-title {
+  margin: 0 0 8px;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-body {
+  padding-top: 14px;
+}
+
+.card-text {
+  margin: 0 0 14px;
+
+  color: var(--black);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.card-link {
+  color: var(--red);
+
+  font-size: 14px;
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+.card-link:hover {
+  color: var(--dark-red);
+  text-decoration: underline;
+}
+
+/* ========================================
+   POKEDEX FILTERS
+   ======================================== */
+
+.filters {
+  margin-bottom: 24px;
+
+  padding: 16px;
+
+  border: 1px solid var(--gray);
+
+  border-radius: 12px;
+
+  background-color: var(--light-gray);
+
+  display: flex;
+  align-items: flex-end;
+
+  gap: 16px;
+}
+
+.filters-field {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.filters-field--search {
+  flex: 1;
+}
+
+.filters-label {
+  color: var(--dark-red);
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+.filters-input,
+.filters-select {
+  width: 100%;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--gray);
+
+  border-radius: 8px;
+
+  background-color: var(--white);
+  color: var(--black);
+
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.filters-select {
+  min-width: 190px;
+
+  cursor: pointer;
+}
+
+.filters-input:focus,
+.filters-select:focus {
+  border-color: var(--red);
+
+  outline: none;
+}
+
+/* ========================================
+   POKEMON CARD
+   ======================================== */
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.pokemon-number {
+  margin: 0 0 10px;
+
+  color: var(--red);
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Selector de dos clases: gana a la regla base .content-panel h2 */
+
+.content-panel .pokemon-name {
+  margin: 12px 0 10px;
+
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.pokemon-types {
+  margin: 0 0 14px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 6px;
+}
+
+.pokemon-card .btn {
+  margin-top: auto;
+
+  align-self: flex-start;
+}
+
+/* ========================================
+   TYPE CARD
+   ======================================== */
+
+.type-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.type-card-badge {
+  margin: 12px 0 8px;
+}
+
+.type-card-example {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ========================================
+   TYPE BADGES
+   ======================================== */
+
+.type-badge {
+  display: inline-block;
+
+  padding: 4px 12px;
+
+  border-radius: 999px;
+
+  color: var(--white);
+
+  font-size: 12px;
+  font-weight: bold;
+
+  letter-spacing: 0.04em;
+}
+
+.type-badge.normal {
+  background-color: var(--gray);
+  color: var(--black);
+}
+
+.type-badge.fuego {
+  background-color: var(--red);
+}
+
+.type-badge.agua {
+  background-color: var(--blue);
+}
+
+.type-badge.electrico {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.type-badge.planta {
+  background-color: var(--green);
+}
+
+.type-badge.hielo {
+  background-color: #5fc9d6;
+}
+
+.type-badge.veneno {
+  background-color: #a45ec4;
+}
+
+.type-badge.tierra {
+  background-color: #b98a3d;
+}
+
+.type-badge.volador {
+  background-color: #7ea8e0;
+}
+
+.type-badge.psiquico {
+  background-color: #d16ba5;
+}
+
+.type-badge.lucha {
+  background-color: #c04a3a;
+}
+
+.type-badge.bicho {
+  background-color: #7fa33a;
+}
+
+.type-badge.roca {
+  background-color: #a68b52;
+}
+
+.type-badge.fantasma {
+  background-color: #6b5b95;
+}
+
+.type-badge.dragon {
+  background-color: #6a7ce0;
+}
+
+.type-badge.siniestro {
+  background-color: #4a4459;
+}
+
+.type-badge.acero {
+  background-color: #8f9bb3;
+}
+
+.type-badge.hada {
+  background-color: #e08fc0;
+}
+
+/* ========================================
+   VIDEO BLOCK
+   ======================================== */
+
+.video-placeholder {
+  min-height: 320px;
+
+  border-radius: 12px;
+
+  background-color: var(--black);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-placeholder span {
+  color: var(--gray);
+
+  font-size: 16px;
+  font-weight: bold;
+
+  letter-spacing: 0.1em;
+}
+
+/* ========================================
+   INTRO SPLIT (TEXT + IMAGE)
+   ======================================== */
+
+.intro-split {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 24px;
+}
+
+.intro-split-text {
+  flex: 1;
+}
+
+.intro-split-media {
+  width: 260px;
+
+  min-height: 190px;
+}
+
+/* ========================================
+   TIMELINE
+   ======================================== */
+
+.timeline {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+.timeline-item {
+  display: grid;
+
+  grid-template-columns: 110px minmax(0, 1fr);
+
+  align-items: stretch;
+
+  gap: 20px;
+}
+
+.timeline-year {
+  margin: 0;
+
+  border-radius: 12px;
+
+  background-color: var(--red);
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.timeline-card {
+  padding: 16px 20px;
+
+  border: 1px solid var(--gray);
+
+  border-radius: 12px;
+
+  background-color: var(--white);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-title {
+  margin: 0 0 6px;
+
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.timeline-text {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* ========================================
+   LINK CARD
+   ======================================== */
+
+.link-card {
+  padding: 16px;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+.link-logo {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.link-logo--red {
+  background-color: var(--red);
+}
+
+.link-logo--blue {
+  background-color: var(--blue);
+}
+
+.link-logo--green {
+  background-color: var(--green);
+}
+
+.link-logo--yellow {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+/* Selector de dos clases: gana a la regla base .content-panel h2 */
+
+.content-panel .link-name {
+  margin: 0 0 2px;
+
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.link-domain {
+  margin: 0 0 6px;
+
+  color: var(--red);
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.link-text {
+  margin: 0;
+
+  font-size: 14px;
+
+  line-height: 1.5;
 }
