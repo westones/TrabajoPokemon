@@ -38,6 +38,36 @@ body {
 }
 
 /* ========================================
+   BACKGROUND GIF
+======================================== */
+
+.page {
+  position: relative;
+}
+
+.page::before {
+  content: "";
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url("https://piraticoctopus.home.blog/wp-content/uploads/2018/10/tumblr_pf9jk0OBYS1rv6iido1_540.gif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.12;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+/* ========================================
    HEADER
 ======================================== */
 
