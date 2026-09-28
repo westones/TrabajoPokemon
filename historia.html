@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Pokémon's World | Inicio</title>
+    <title>Pokémon's World | Historia</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -26,13 +26,13 @@
 
         <!-- Header navigation -->
         <nav class="header-nav">
-          <a href="index.html" class="active"> Inicio </a>
+          <a href="index.html"> Inicio </a>
 
           <a href="pokedex.html"> Pokédex </a>
 
           <a href="tipos.html"> Tipos </a>
 
-          <a href="historia.html"> Historia </a>
+          <a href="historia.html" class="active"> Historia </a>
 
           <a href="enlaces.html"> Enlaces </a>
         </nav>
@@ -50,13 +50,13 @@
           <p class="panel-title">NAVEGACIÓN DEL SISTEMA</p>
 
           <nav class="side-nav">
-            <a href="index.html" class="active"> Inicio </a>
+            <a href="index.html"> Inicio </a>
 
             <a href="pokedex.html"> Pokédex </a>
 
             <a href="tipos.html"> Tipos </a>
 
-            <a href="historia.html"> Historia </a>
+            <a href="historia.html" class="active"> Historia </a>
 
             <a href="enlaces.html"> Enlaces </a>
           </nav>
@@ -68,73 +68,90 @@
         <section class="content-panel">
           <p class="panel-title">CONTENIDO PRINCIPAL</p>
 
-          <!-- HERO -->
-          <div class="hero">
-            <span class="hero-label">POKÉDEX DE FANS</span>
+          <!-- INTRO -->
+          <div class="intro-split">
+            <div class="intro-split-text">
+              <h1 class="page-title page-title--underline">Historia de Pokémon</h1>
 
-            <h1 class="hero-title">Bienvenido, entrenador</h1>
+              <p class="page-intro">
+                Pokémon nació en Japón en 1996 de la mano de Satoshi Tajiri y su
+                estudio Game Freak, con los videojuegos Pokémon Rojo y Verde
+                para Game Boy. Desde entonces se ha convertido en una de las
+                franquicias más grandes del mundo.
+              </p>
+            </div>
 
-            <p class="hero-text">
-              Historia, tipos y enlaces de la saga Pokémon en un solo sitio.
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="historia.html">Ver historia</a>
-
-              <a class="btn btn-ghost" href="tipos.html">Ver tipos</a>
+            <div class="img-placeholder intro-split-media">
+              <span> IMAGEN: PORTADA DE LA SAGA </span>
             </div>
           </div>
 
-          <!-- FEATURE CARDS -->
-          <div class="card-grid card-grid--3">
-            <article class="card">
-              <div class="img-placeholder">
-                <span> IMAGEN </span>
-              </div>
+          <!-- TIMELINE -->
+          <h2 class="section-title">Línea del tiempo</h2>
 
-              <div class="card-body">
-                <h2 class="card-title">Historia</h2>
+          <ol class="timeline">
+            <li class="timeline-item">
+              <p class="timeline-year">1996</p>
 
-                <p class="card-text">
-                  Cómo empezó todo en 1996 y cómo creció la saga.
+              <div class="timeline-card">
+                <h3 class="timeline-title">Salen los primeros juegos</h3>
+
+                <p class="timeline-text">
+                  Pokémon Rojo y Verde llegan a Game Boy en Japón, junto al juego
+                  de cartas.
                 </p>
-
-                <a class="card-link" href="historia.html">Ver historia →</a>
               </div>
-            </article>
+            </li>
 
-            <article class="card">
-              <div class="img-placeholder">
-                <span> IMAGEN </span>
-              </div>
+            <li class="timeline-item">
+              <p class="timeline-year">1997</p>
 
-              <div class="card-body">
-                <h2 class="card-title">Tipos</h2>
+              <div class="timeline-card">
+                <h3 class="timeline-title">Empieza el anime</h3>
 
-                <p class="card-text">
-                  Los 18 tipos con imágenes y un video explicativo.
+                <p class="timeline-text">
+                  La serie de televisión se estrena en Japón con Ash y Pikachu.
                 </p>
-
-                <a class="card-link" href="tipos.html">Ver tipos →</a>
               </div>
-            </article>
+            </li>
 
-            <article class="card">
-              <div class="img-placeholder">
-                <span> IMAGEN </span>
-              </div>
+            <li class="timeline-item">
+              <p class="timeline-year">1998</p>
 
-              <div class="card-body">
-                <h2 class="card-title">Enlaces</h2>
+              <div class="timeline-card">
+                <h3 class="timeline-title">Salto a Occidente</h3>
 
-                <p class="card-text">
-                  Webs oficiales y de la comunidad para seguir aprendiendo.
+                <p class="timeline-text">
+                  Pokémon Rojo y Azul llegan a Estados Unidos y arranca la
+                  fiebre mundial.
                 </p>
-
-                <a class="card-link" href="enlaces.html">Ver enlaces →</a>
               </div>
-            </article>
-          </div>
+            </li>
+
+            <li class="timeline-item">
+              <p class="timeline-year">2016</p>
+
+              <div class="timeline-card">
+                <h3 class="timeline-title">Pokémon GO</h3>
+
+                <p class="timeline-text">
+                  El juego para móviles saca a los entrenadores a la calle.
+                </p>
+              </div>
+            </li>
+
+            <li class="timeline-item">
+              <p class="timeline-year">2022</p>
+
+              <div class="timeline-card">
+                <h3 class="timeline-title">Escarlata y Púrpura</h3>
+
+                <p class="timeline-text">
+                  Primer mundo abierto de la saga principal en Nintendo Switch.
+                </p>
+              </div>
+            </li>
+          </ol>
         </section>
       </main>
 
