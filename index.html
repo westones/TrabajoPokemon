@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pokémon's World</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="min-h-screen bg-[#f2f2f2] text-[#1a1a1a]">
+    <!-- HEADER -->
+    <header class="h-20 bg-[#E3350D] border-b-4 border-[#B52A0A]">
+      <div
+        class="h-full max-w-[1400px] mx-auto px-8 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-full bg-white border-4 border-[#1A1A1A]"
+          ></div>
+
+          <div>
+            <h1 class="text-xl font-bold text-white">Pokémon's World</h1>
+
+            <span class="text-xs font-bold text-[#FFCB05]">
+              POKÉDEX SYSTEM
+            </span>
+          </div>
+        </div>
+
+        <!-- Header navigation -->
+        <nav class="flex items-center gap-8">
+          <a href="#" class="text-white font-semibold hover:text-[#FFCB05]">
+            Home
+          </a>
+
+          <a href="#" class="text-white font-semibold hover:text-[#FFCB05]">
+            Pokédex
+          </a>
+
+          <a href="#" class="text-white font-semibold hover:text-[#FFCB05]">
+            Types
+          </a>
+
+          <a href="#" class="text-white font-semibold hover:text-[#FFCB05]">
+            History
+          </a>
+
+          <a href="#" class="text-white font-semibold hover:text-[#FFCB05]">
+            Links
+          </a>
+        </nav>
+
+        <!-- Music -->
+        <button
+          class="px-4 py-2 rounded-full border border-[#B52A0A] bg-[#E3350D] text-white font-semibold hover:bg-[#B52A0A]"
+        >
+          ▶ Disconnect music
+        </button>
+      </div>
+    </header>
+
+    <!-- PAGE LAYOUT -->
+    <div
+      class="max-w-[1400px] mx-auto px-8 py-8 grid grid-cols-[235px_minmax(0,1fr)_270px] gap-6"
+    >
+      <!-- LEFT: NAVIGATION -->
+      <aside>
+        <div class="bg-white border border-[#B8B8B8] rounded-xl p-4 shadow-sm">
+          <p class="text-xs font-bold text-[#B52A0A] mb-4">SYSTEM NAVIGATION</p>
+
+          <nav class="flex flex-col gap-2">
+            <a
+              href="#"
+              class="px-4 py-3 rounded-lg bg-[#E3350D] text-white font-semibold"
+            >
+              Home
+            </a>
+
+            <a
+              href="#"
+              class="px-4 py-3 rounded-lg text-[#1A1A1A] hover:bg-[#E3350D] hover:text-white"
+            >
+              Pokédex
+            </a>
+
+            <a
+              href="#"
+              class="px-4 py-3 rounded-lg text-[#1A1A1A] hover:bg-[#E3350D] hover:text-white"
+            >
+              Pokémon Types
+            </a>
+
+            <a
+              href="#"
+              class="px-4 py-3 rounded-lg text-[#1A1A1A] hover:bg-[#E3350D] hover:text-white"
+            >
+              Pokémon History
+            </a>
+
+            <a
+              href="#"
+              class="px-4 py-3 rounded-lg text-[#1A1A1A] hover:bg-[#E3350D] hover:text-white"
+            >
+              Links
+            </a>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- CENTER: MAIN CONTENT -->
+      <main>
+        <section
+          class="bg-white border border-[#B8B8B8] rounded-xl p-6 min-h-[600px]"
+        >
+          <p class="text-xs font-bold text-[#B52A0A] mb-2">MAIN CONTENT</p>
+
+          <h2 class="text-3xl font-bold mb-4">Pokémon's World</h2>
+
+          <div
+            class="border-2 border-dashed border-[#B8B8B8] rounded-lg min-h-[450px] flex items-center justify-center bg-[#f2f2f2]"
+          >
+            <span class="text-[#B8B8B8] font-semibold">
+              MAIN CONTENT AREA
+            </span>
+          </div>
+        </section>
+      </main>
+
+      <!-- RIGHT: SIDEBAR / ADS -->
+      <aside>
+        <div class="bg-white border border-[#B8B8B8] rounded-xl p-4 shadow-sm">
+          <p class="text-xs font-bold text-[#B52A0A] mb-4">SIDEBAR / ADS</p>
+
+          <div
+            class="min-h-[500px] border-2 border-dashed border-[#B8B8B8] rounded-lg flex items-center justify-center bg-[#f2f2f2]"
+          >
+            <span class="text-[#B8B8B8] text-sm font-semibold text-center">
+              SIDEBAR / ADS AREA
+            </span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer
+      class="min-h-[120px] bg-[#1A1A1A] border-t-4 border-[#B52A0A] text-white"
+    >
+      <div
+        class="max-w-[1400px] mx-auto px-8 py-8 flex items-center justify-between"
+      >
+        <span class="font-bold"> Pokémon's World </span>
+
+        <span class="text-sm text-[#B8B8B8]"> © 2026 Pokémon's World </span>
+      </div>
+    </footer>
+  </body>
+</html>
