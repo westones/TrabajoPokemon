@@ -3,84 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Pokémon's World | Pokédex</title>
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body class="page">
-    <!-- HEADER -->
+    <!-- Cabecera -->
     <header class="header">
       <div class="header-container">
         <!-- Logo -->
         <div class="brand">
           <div class="pokeball"></div>
-
           <div>
             <h1>Pokémon's World</h1>
-
             <span> SISTEMA POKÉDEX </span>
           </div>
         </div>
-
-        <!-- Header navigation -->
+        <!-- Navegación principal -->
         <nav class="header-nav">
           <a href="index.html"> Inicio </a>
-
           <a href="pokedex.html" class="active"> Pokédex </a>
-
           <a href="tipos.html"> Tipos </a>
-
           <a href="historia.html"> Historia </a>
-
           <a href="enlaces.html"> Enlaces </a>
         </nav>
-
-        <!-- Music -->
+        <!-- Botón de música -->
         <button class="music-button">▶ Desconectar música</button>
       </div>
     </header>
-
-    <!-- PAGE LAYOUT -->
+    <!-- Estructura de la página -->
     <div class="page-layout">
-      <!-- LEFT: NAVIGATION -->
+      <!-- Menú lateral -->
       <aside class="left-sidebar">
         <div class="navigation-panel">
           <p class="panel-title">NAVEGACIÓN DEL SISTEMA</p>
-
           <nav class="side-nav">
-            <a href="index.html"> Inicio </a>
-
-            <a href="pokedex.html" class="active"> Pokédex </a>
-
-            <a href="tipos.html"> Tipos </a>
-
-            <a href="historia.html"> Historia </a>
-
-            <a href="enlaces.html"> Enlaces </a>
+            <a href="index.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+              </svg>
+              Inicio
+            </a>
+            <a href="pokedex.html" class="active">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z" />
+                <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z" />
+              </svg>
+              Pokédex
+            </a>
+            <a href="tipos.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                />
+                <circle cx="7" cy="7" r="1.2" />
+              </svg>
+              Tipos
+            </a>
+            <a href="historia.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5.2l3.4 2" />
+              </svg>
+              Historia
+            </a>
+            <a href="enlaces.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+              </svg>
+              Enlaces
+            </a>
           </nav>
         </div>
       </aside>
-
-      <!-- CENTER: MAIN CONTENT -->
+      <!-- Contenido principal -->
       <main class="main-content">
         <section class="content-panel">
           <p class="panel-title">CONTENIDO PRINCIPAL</p>
-
-          <!-- PAGE TITLE -->
+          <!-- Título de la página -->
           <h1 class="page-title page-title--underline">Pokémon's World</h1>
-
           <p class="page-intro">
-            Consulta la ficha de los Pokémon más icónicos de la saga: su número
-            de registro, sus tipos y su ficha de detalle.
+            Consulta la ficha de los Pokémon más icónicos de la saga: su número de registro, sus
+            tipos y su ficha de detalle.
           </p>
-
-          <!-- FILTERS (controles visuales, sin JavaScript) -->
+          <!-- Filtros (visuales, aún no funcionan) -->
           <div class="filters">
             <div class="filters-field filters-field--search">
               <label class="filters-label" for="filtro-buscar">Buscar</label>
-
               <input
                 class="filters-input"
                 id="filtro-buscar"
@@ -88,10 +97,8 @@
                 placeholder="Buscar Pokémon..."
               />
             </div>
-
             <div class="filters-field">
               <label class="filters-label" for="filtro-tipo">Tipo</label>
-
               <select class="filters-select" id="filtro-tipo">
                 <option selected>Todos los tipos</option>
                 <option>Normal</option>
@@ -114,10 +121,8 @@
                 <option>Hada</option>
               </select>
             </div>
-
             <div class="filters-field">
               <label class="filters-label" for="filtro-generacion">Generación</label>
-
               <select class="filters-select" id="filtro-generacion">
                 <option selected>Todas las generaciones</option>
                 <option>Primera generación</option>
@@ -132,165 +137,111 @@
               </select>
             </div>
           </div>
-
-          <!-- POKÉDEX GRID -->
+          <!-- Lista de Pokémon -->
           <div class="card-grid card-grid--3">
             <article class="pokemon-card">
               <p class="pokemon-number">#001</p>
-
               <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-
               <h2 class="pokemon-name">Bulbasaur</h2>
-
               <p class="pokemon-types">
                 <span class="type-badge planta">Planta</span>
                 <span class="type-badge veneno">Veneno</span>
               </p>
-
-              <button class="btn btn-outline btn-small" type="button">
-                Ver detalles
-              </button>
+              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
             </article>
-
             <article class="pokemon-card">
               <p class="pokemon-number">#004</p>
-
               <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-
               <h2 class="pokemon-name">Charmander</h2>
-
               <p class="pokemon-types">
                 <span class="type-badge fuego">Fuego</span>
               </p>
-
-              <button class="btn btn-outline btn-small" type="button">
-                Ver detalles
-              </button>
+              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
             </article>
-
             <article class="pokemon-card">
               <p class="pokemon-number">#007</p>
-
               <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-
               <h2 class="pokemon-name">Squirtle</h2>
-
               <p class="pokemon-types">
                 <span class="type-badge agua">Agua</span>
               </p>
-
-              <button class="btn btn-outline btn-small" type="button">
-                Ver detalles
-              </button>
+              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
             </article>
-
             <article class="pokemon-card">
               <p class="pokemon-number">#025</p>
-
               <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-
               <h2 class="pokemon-name">Pikachu</h2>
-
               <p class="pokemon-types">
                 <span class="type-badge electrico">Eléctrico</span>
               </p>
-
-              <button class="btn btn-outline btn-small" type="button">
-                Ver detalles
-              </button>
+              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
             </article>
-
             <article class="pokemon-card">
               <p class="pokemon-number">#039</p>
-
               <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-
               <h2 class="pokemon-name">Jigglypuff</h2>
-
               <p class="pokemon-types">
                 <span class="type-badge normal">Normal</span>
                 <span class="type-badge hada">Hada</span>
               </p>
-
-              <button class="btn btn-outline btn-small" type="button">
-                Ver detalles
-              </button>
+              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
             </article>
-
             <article class="pokemon-card">
               <p class="pokemon-number">#133</p>
-
               <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-
               <h2 class="pokemon-name">Eevee</h2>
-
               <p class="pokemon-types">
                 <span class="type-badge normal">Normal</span>
               </p>
-
-              <button class="btn btn-outline btn-small" type="button">
-                Ver detalles
-              </button>
+              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
             </article>
           </div>
         </section>
       </main>
-
-      <!-- RIGHT: SIDEBAR / ADS -->
+      <!-- Publicidad -->
       <aside class="right-sidebar">
-        <!-- Ad 208 x 250 -->
+        <!-- Anuncio 208x250 -->
         <div class="sidebar-panel">
           <p class="panel-title">PUBLICIDAD</p>
-
           <div class="ad-placeholder ad-placeholder--tall">
             <span> Anuncio 208 × 250 </span>
           </div>
         </div>
-
-        <!-- Fun fact -->
+        <!-- Dato curioso -->
         <div class="fact-box">
           <p class="fact-title">¿SABÍAS QUE...?</p>
-
           <p class="fact-text">
-            Hay 18 tipos de Pokémon y cada uno tiene ventajas y desventajas
-            frente a otros.
+            Hay 18 tipos de Pokémon y cada uno tiene ventajas y desventajas frente a otros.
           </p>
         </div>
-
-        <!-- Ad 208 x 120 -->
+        <!-- Anuncio 208x120 -->
         <div class="sidebar-panel">
           <p class="panel-title">PUBLICIDAD</p>
-
           <div class="ad-placeholder ad-placeholder--wide">
             <span> Anuncio 208 × 120 </span>
           </div>
         </div>
       </aside>
     </div>
-
-    <!-- FOOTER -->
+    <!-- Pie de página -->
     <footer class="footer">
       <div class="footer-container">
-        <p class="footer-copy">
-          © 2026 Juan Manuel y Rubén. Todos los derechos reservados.
-        </p>
-
+        <p class="footer-copy">© 2026 Juan Manuel y Rubén. Todos los derechos reservados.</p>
         <p class="footer-note">
-          Pokémon's World es un proyecto de clase sin ánimo de lucro. Pokémon y
-          sus personajes son marcas de Nintendo, Creatures Inc. y GAME FREAK
-          Inc.
+          Pokémon's World es un proyecto de clase sin ánimo de lucro. Pokémon y sus personajes son
+          marcas de Nintendo, Creatures Inc. y GAME FREAK Inc.
         </p>
       </div>
     </footer>

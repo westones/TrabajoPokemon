@@ -1,1118 +1,232 @@
-/* ========================================
-   VARIABLES
-======================================== */
-
+/* VARIABLES */
 :root {
-  --red: #e3350d;
-  --dark-red: #b52a0a;
-  --black: #1a1a1a;
-  --white: #ffffff;
-  --light-gray: #f2f2f2;
-  --gray: #b8b8b8;
-  --blue: #3b82a0;
-  --green: #6dbb5a;
+  --red: #e3350d;   
+  --dark-red: #b52a0a;   
+  --black: #1a1a1a;   
+  --white: #fff;
+  --light: #f2f2f2; 
+  --gray: #b8b8b8;      
+  --blue: #3b82a0;    
+  --green: #6dbb5a;   
   --yellow: #ffcb05;
+  --max: 1400px;    
+  --pad: 32px;          
+  --radius: 12px;     
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
-/* ========================================
-   GENERAL
-======================================== */
+/* REINICIO + ESTRUCTURA GENERAL */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Columna flex: el footer queda siempre pegado al fondo de la ventana
-   aunque el contenido sea mas corto que el viewport. */
 body {
   min-height: 100vh;
-
   display: flex;
   flex-direction: column;
-
-  background-color: var(--light-gray);
+  background: var(--light);
   color: var(--black);
-
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ========================================
-   BACKGROUND GIF
-======================================== */
-
-.page {
-  position: relative;
-}
+.page { position: relative; }
 
 .page::before {
   content: "";
-
   position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  background-image: url("https://piraticoctopus.home.blog/wp-content/uploads/2018/10/tumblr_pf9jk0OBYS1rv6iido1_540.gif");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
+  inset: 0;
+  background: url("https://piraticoctopus.home.blog/wp-content/uploads/2018/10/tumblr_pf9jk0OBYS1rv6iido1_540.gif") center / cover no-repeat;
   opacity: 0.12;
-
   z-index: -1;
-
   pointer-events: none;
 }
 
-/* ========================================
-   HEADER
-======================================== */
-
-.header {
-  height: 80px;
-
-  background-color: var(--red);
-
-  border-bottom: 4px solid var(--dark-red);
-}
-
-.header-container {
+/* PRIMITIVOS COMPARTIDOS — única definición del ancho de rejilla y de la superficie de las tarjetas */
+.header-container, .page-layout, .footer-container {
   width: 100%;
-  max-width: 1400px;
-  height: 100%;
-
+  max-width: var(--max);
   margin: 0 auto;
-  padding: 0 32px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding: 0 var(--pad);
 }
 
-/* ========================================
-   BRAND
-======================================== */
-
-.brand {
-  display: flex;
-  align-items: center;
-
-  gap: 12px;
+.navigation-panel, .content-panel, .sidebar-panel,
+.card, .pokemon-card, .type-card, .link-card, .timeline-card {
+  background: var(--white);
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
 
-.brand h1 {
-  margin: 0;
+/* CABECERA */
+.header { height: 80px; background: var(--red); border-bottom: 4px solid var(--dark-red); }
+.header-container { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 
-  color: var(--white);
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand h1 { margin: 0; color: var(--white); font-size: 20px; font-weight: bold; }
+.brand span { display: block; margin-top: 3px; color: var(--yellow); font-size: 10px; font-weight: bold; }
+.pokeball { position: relative; width: 40px; height: 40px; border: 4px solid var(--black); border-radius: 50%; background: linear-gradient(var(--red) 0 45%, var(--black) 45% 55%, var(--white) 55% 100%); }
+.pokeball::after { content: ""; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 10px; height: 10px; border: 3px solid var(--black); border-radius: 50%; background: var(--white); }
 
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.brand span {
-  display: block;
-
-  margin-top: 3px;
-
-  color: var(--yellow);
-
-  font-size: 10px;
-  font-weight: bold;
-}
-
-/* Pokéball */
-
-.pokeball {
-  width: 40px;
-  height: 40px;
-
-  border: 4px solid var(--black);
-  border-radius: 50%;
-
-  background-color: var(--white);
-}
-
-/* ========================================
-   HEADER NAVIGATION
-======================================== */
-
-.header-nav {
-  display: flex;
-  align-items: center;
-
-  gap: 32px;
-}
-
-.header-nav a {
-  color: var(--white);
-
-  text-decoration: none;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.header-nav a:hover,
-.header-nav a.active {
-  color: var(--yellow);
-}
-
-/* ========================================
-   MUSIC BUTTON
-======================================== */
+.header-nav { display: flex; align-items: center; gap: 32px; }
+.header-nav a { color: var(--white); text-decoration: none; font-size: 14px; font-weight: 600; }
+.header-nav a:hover, .header-nav a.active { color: var(--yellow); }
 
 .music-button {
   padding: 9px 16px;
-
   border: 1px solid var(--dark-red);
   border-radius: 999px;
-
-  background-color: var(--red);
+  background: var(--red);
   color: var(--white);
-
   font-size: 14px;
   font-weight: 600;
-
   cursor: pointer;
 }
+.music-button:hover { background: var(--dark-red); }
 
-.music-button:hover {
-  background-color: var(--dark-red);
-}
-
-/* ========================================
-   PAGE LAYOUT
-======================================== */
-
+/* REJILLA PRINCIPAL + NAVEGACIÓN LATERAL */
 .page-layout {
-  width: 100%;
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  padding: 32px;
-
+  padding: var(--pad);
   display: grid;
-
-  grid-template-columns:
-    235px
-    minmax(0, 1fr)
-    270px;
-
+  grid-template-columns: 235px minmax(0, 1fr) 270px;
   gap: 24px;
-
-  /* Absorbe el espacio sobrante: el footer baja al fondo */
   flex: 1;
 }
 
-/* ========================================
-   PANELS
-======================================== */
-
-.navigation-panel,
-.content-panel,
-.sidebar-panel {
-  background-color: var(--white);
-
-  border: 1px solid var(--gray);
-
-  border-radius: 12px;
-
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-}
-
-/* Columna flex para que el panel de navegacion ocupe toda la altura
-   de la fila, igual que hace el sidebar derecho. */
-.left-sidebar {
-  display: flex;
-  flex-direction: column;
-}
-
-.navigation-panel {
-  flex: 1;
-
-  padding: 16px;
-}
-
-.content-panel {
-  min-height: 600px;
-
-  padding: 24px;
-}
-
-.sidebar-panel {
-  padding: 16px;
-}
-
-/* ========================================
-   PANEL TITLES
-======================================== */
-
-.panel-title {
-  margin: 0 0 16px;
-
-  color: var(--dark-red);
-
-  font-size: 10px;
-  font-weight: bold;
-
-  letter-spacing: 0.08em;
-}
-
-/* ========================================
-   LEFT NAVIGATION
-======================================== */
-
-.side-nav {
-  display: flex;
-  flex-direction: column;
-
-  gap: 8px;
-}
-
-.side-nav a {
-  padding: 12px 16px;
-
-  border-radius: 8px;
-
-  color: var(--black);
-
-  text-decoration: none;
-
-  font-weight: 600;
-}
-
-.side-nav a:hover,
-.side-nav a.active {
-  background-color: var(--red);
-
-  color: var(--white);
-}
-
-/* ========================================
-   MAIN CONTENT
-======================================== */
-
-.content-panel h2 {
-  margin: 0 0 16px;
-
-  font-size: 30px;
-  font-weight: bold;
-}
-
-/* ========================================
-   FOOTER
-======================================== */
-
-.footer {
-  min-height: 120px;
-
-  background-color: var(--black);
-
-  border-top: 4px solid var(--dark-red);
-
-  color: var(--white);
-}
-
-.footer-container {
-  width: 100%;
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  padding: 32px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  gap: 8px;
-
-  text-align: left;
-}
-
-/* ========================================
-   SIDEBAR LAYOUT
-   ======================================== */
-
-.left-sidebar,
-.right-sidebar {
-  display: flex;
-  flex-direction: column;
-
-  gap: 16px;
-}
-
-/* ========================================
-   AD PLACEHOLDER
-   ======================================== */
-
-.ad-placeholder {
-  border: 2px dashed var(--gray);
-
-  border-radius: 8px;
-
-  background-color: var(--light-gray);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-.ad-placeholder span {
-  color: var(--gray);
-
-  font-weight: 600;
-}
-
-.ad-placeholder--tall {
-  min-height: 250px;
-}
-
-.ad-placeholder--wide {
-  min-height: 120px;
-}
-
-/* ========================================
-   FACT BOX
-   ======================================== */
-
-.fact-box {
-  padding: 16px;
-
-  border: 1px solid var(--dark-red);
-
-  border-radius: 12px;
-
-  background-color: var(--yellow);
-  color: var(--black);
-}
-
-.fact-title {
-  margin: 0 0 8px;
-
-  font-size: 14px;
-  font-weight: bold;
-
-  letter-spacing: 0.04em;
-}
-
-.fact-text {
-  margin: 0;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
-
-
-.footer-copy {
-  margin: 0;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.footer-note {
-  margin: 0;
-
-  color: var(--gray);
-
-  font-size: 13px;
-
-  line-height: 1.5;
-}
-
-/* ========================================
-   PAGE TITLES
-   ======================================== */
-
-.page-title {
-  margin: 0 0 12px;
-
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.page-title--underline {
-  padding-bottom: 10px;
-
-  border-bottom: 4px solid var(--red);
-
-  display: inline-block;
-}
-
-.page-intro {
-  margin: 0 0 24px;
-
-  color: var(--black);
-
-  font-size: 16px;
-
-  line-height: 1.6;
-}
-
-/* Selector de dos clases: gana a la regla base .content-panel h2 */
-
-.content-panel .section-title {
-  margin: 32px 0 16px;
-
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.section-actions {
-  margin: 20px 0 0;
-
-  text-align: center;
-}
-
-/* ========================================
-   IMAGE PLACEHOLDER
-   ======================================== */
-
-.img-placeholder {
-  min-height: 140px;
-
-  border: 2px dashed var(--gray);
-
-  border-radius: 8px;
-
-  background-color: var(--light-gray);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-}
-
-.img-placeholder span {
-  padding: 0 8px;
-
-  color: var(--gray);
-
-  font-size: 12px;
-  font-weight: 600;
-
-  letter-spacing: 0.04em;
-}
-
-.img-placeholder--small {
-  min-height: 120px;
-}
-
-/* ========================================
-   BUTTONS
-   ======================================== */
-
+.left-sidebar, .right-sidebar { display: flex; flex-direction: column; gap: 16px; }
+.navigation-panel { flex: 1; padding: 16px; }
+.sidebar-panel { padding: 16px; }
+.content-panel { min-height: 600px; padding: 24px; }
+
+.side-nav { display: flex; flex-direction: column; gap: 8px; }
+.side-nav a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 8px; color: var(--black); text-decoration: none; font-weight: 600; }
+.side-nav a:hover, .side-nav a.active { background: var(--red); color: var(--white); }
+
+/* ICONOS DE LA NAVEGACION */
+.nav-icon { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* PIE DE PÁGINA */
+.footer { background: var(--black); border-top: 4px solid var(--dark-red); color: var(--white); }
+.footer-container { padding: 16px var(--pad); }
+.footer-copy { margin: 0; font-size: 14px; font-weight: 600; }
+.footer-note { margin: 8px 0 0; color: var(--gray); font-size: 13px; line-height: 1.5; }
+
+/* TIPOGRAFÍA — cada título es un selector de clase simple, sin guerras de especificidad */
+.panel-title { margin: 0 0 16px; color: var(--dark-red); font-size: 10px; font-weight: bold; letter-spacing: 0.08em; }
+.page-title { margin: 0 0 12px; font-size: 30px; font-weight: bold; }
+.page-title--underline { padding-bottom: 10px; border-bottom: 4px solid var(--red); display: inline-block; }
+.page-intro { margin: 0 0 24px; font-size: 16px; line-height: 1.6; }
+.section-title { margin: 32px 0 16px; font-size: 22px; font-weight: bold; }
+.section-actions { margin: 20px 0 0; text-align: center; }
+
+/* MARCADORES DE POSICIÓN — anuncios, imágenes y vídeo */
+.ad-placeholder, .img-placeholder, .video-placeholder { display: flex; align-items: center; justify-content: center; text-align: center; }
+.ad-placeholder, .img-placeholder { border: 2px dashed var(--gray); border-radius: 8px; background: var(--light); }
+.ad-placeholder span, .img-placeholder span, .video-placeholder span { color: var(--gray); font-weight: 600; }
+.ad-placeholder--tall { min-height: 250px; }
+.ad-placeholder--wide, .img-placeholder--small { min-height: 120px; }
+.img-placeholder { min-height: 140px; }
+.img-placeholder span { padding: 0 8px; font-size: 12px; letter-spacing: 0.04em; }
+.video-placeholder { min-height: 320px; border-radius: var(--radius); background: var(--black); }
+.video-placeholder span { font-size: 16px; font-weight: bold; letter-spacing: 0.1em; }
+
+/* CAJA DE DATO CURIOSO */
+.fact-box { padding: 16px; border: 1px solid var(--dark-red); border-radius: var(--radius); background: var(--yellow); color: var(--black); }
+.fact-title { margin: 0 0 8px; font-size: 14px; font-weight: bold; letter-spacing: 0.04em; }
+.fact-text { margin: 0; font-size: 14px; line-height: 1.5; }
+
+/* BANNER PRINCIPAL */
+.hero { margin: 0 0 24px; padding: 40px; border-radius: var(--radius); background: var(--blue); color: var(--white); }
+.hero-label { display: inline-block; margin-bottom: 12px; color: var(--yellow); font-size: 12px; font-weight: bold; letter-spacing: 0.14em; }
+.hero-title { margin: 0 0 12px; font-size: 36px; font-weight: bold; }
+.hero-text { max-width: 480px; margin: 0 0 24px; font-size: 17px; line-height: 1.6; }
+.hero-actions { display: flex; gap: 12px; }
+
+/* BOTONES */
 .btn {
   padding: 11px 22px;
-
   border: 1px solid transparent;
   border-radius: 8px;
-
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
-
   text-decoration: none;
-
   cursor: pointer;
 }
-
-.btn-primary {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background-color: var(--dark-red);
-}
-
-.btn-ghost {
-  border-color: var(--white);
-
-  background-color: transparent;
-  color: var(--white);
-}
-
-.btn-ghost:hover {
-  background-color: var(--white);
-  color: var(--blue);
-}
-
-.btn-outline {
-  border-color: var(--red);
-
-  background-color: var(--white);
-  color: var(--red);
-}
-
-.btn-outline:hover {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-.btn-small {
-  padding: 8px 16px;
-
-  font-size: 13px;
-}
-
-/* ========================================
-   HERO
-   ======================================== */
-
-.hero {
-  margin: 0 0 24px;
-
-  padding: 40px;
-
-  border-radius: 12px;
-
-  background-color: var(--blue);
-  color: var(--white);
-}
-
-.hero-label {
-  display: inline-block;
-
-  margin-bottom: 12px;
-
-  color: var(--yellow);
-
-  font-size: 12px;
-  font-weight: bold;
-
-  letter-spacing: 0.14em;
-}
-
-.hero-title {
-  margin: 0 0 12px;
-
-  font-size: 36px;
-  font-weight: bold;
-}
-
-.hero-text {
-  max-width: 480px;
-
-  margin: 0 0 24px;
-
-  font-size: 17px;
-
-  line-height: 1.6;
-}
-
-.hero-actions {
-  display: flex;
-
-  gap: 12px;
-}
-
-/* ========================================
-   CARD GRIDS
-   ======================================== */
-
-.card-grid {
-  display: grid;
-
-  gap: 20px;
-}
-
-.card-grid--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.card-grid--2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-/* ========================================
-   CARDS
-   ======================================== */
-
-.card,
-.pokemon-card,
-.type-card,
-.link-card {
-  border: 1px solid var(--gray);
-
-  border-radius: 12px;
-
-  background-color: var(--white);
-
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-}
-
-.card,
-.pokemon-card,
-.type-card {
-  padding: 16px;
-}
-
-/* Selector de dos clases: gana a la regla base .content-panel h2 */
-
-.content-panel .card-title {
-  margin: 0 0 8px;
-
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.card-body {
-  padding-top: 14px;
-}
-
-.card-text {
-  margin: 0 0 14px;
-
-  color: var(--black);
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
-
-.card-link {
-  color: var(--red);
-
-  font-size: 14px;
-  font-weight: bold;
-
-  text-decoration: none;
-}
-
-.card-link:hover {
-  color: var(--dark-red);
-  text-decoration: underline;
-}
-
-/* ========================================
-   POKEDEX FILTERS
-   ======================================== */
-
-.filters {
-  margin-bottom: 24px;
-
-  padding: 16px;
-
-  border: 1px solid var(--gray);
-
-  border-radius: 12px;
-
-  background-color: var(--light-gray);
-
-  display: flex;
-  align-items: flex-end;
-
-  gap: 16px;
-}
-
-.filters-field {
-  display: flex;
-  flex-direction: column;
-
-  gap: 6px;
-}
-
-.filters-field--search {
-  flex: 1;
-}
-
-.filters-label {
-  color: var(--dark-red);
-
-  font-size: 11px;
-  font-weight: bold;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-}
-
-.filters-input,
-.filters-select {
+.btn-small { padding: 8px 16px; font-size: 13px; }
+.btn-primary { background: var(--red); color: var(--white); }
+.btn-primary:hover { background: var(--dark-red); }
+.btn-ghost { border-color: var(--white); color: var(--white); }
+.btn-ghost:hover { background: var(--white); color: var(--blue); }
+.btn-outline { border-color: var(--red); background: var(--white); color: var(--red); }
+.btn-outline:hover { background: var(--red); color: var(--white); }
+
+/* TARJETAS + REJILLAS */
+.card-grid { display: grid; gap: 20px; }
+.card-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.card-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.card, .pokemon-card, .type-card { padding: 16px; }
+.pokemon-card, .type-card { display: flex; flex-direction: column; }
+.pokemon-card .btn { margin-top: auto; align-self: flex-start; }
+.card-title { margin: 0 0 8px; font-size: 20px; font-weight: bold; }
+.card-body { padding-top: 14px; }
+.card-text { margin: 0 0 14px; font-size: 14px; line-height: 1.5; }
+.card-link { color: var(--red); font-size: 14px; font-weight: bold; text-decoration: none; }
+.card-link:hover { color: var(--dark-red); text-decoration: underline; }
+.pokemon-number { margin: 0 0 10px; color: var(--red); font-size: 15px; font-weight: bold; }
+.pokemon-name { margin: 12px 0 10px; font-size: 19px; font-weight: bold; }
+.pokemon-types { margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.type-card-badge { margin: 12px 0 8px; }
+.type-card-example { margin: 0; font-size: 14px; font-weight: 600; }
+
+/* FILTROS DE LA POKÉDEX */
+.filters { margin-bottom: 24px; padding: 16px; border: 1px solid var(--gray); border-radius: var(--radius); background: var(--light); display: flex; align-items: flex-end; gap: 16px; }
+.filters-field { display: flex; flex-direction: column; gap: 6px; }
+.filters-field--search { flex: 1; }
+.filters-label { color: var(--dark-red); font-size: 11px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; }
+.filters-input, .filters-select {
   width: 100%;
-
   padding: 10px 12px;
-
   border: 1px solid var(--gray);
-
   border-radius: 8px;
-
-  background-color: var(--white);
+  background: var(--white);
   color: var(--black);
-
   font-family: inherit;
   font-size: 14px;
 }
-
-.filters-select {
-  min-width: 190px;
-
-  cursor: pointer;
-}
-
-.filters-input:focus,
-.filters-select:focus {
-  border-color: var(--red);
-
-  outline: none;
-}
-
-/* ========================================
-   POKEMON CARD
-   ======================================== */
-
-.pokemon-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.pokemon-number {
-  margin: 0 0 10px;
-
-  color: var(--red);
-
-  font-size: 15px;
-  font-weight: bold;
-}
-
-/* Selector de dos clases: gana a la regla base .content-panel h2 */
-
-.content-panel .pokemon-name {
-  margin: 12px 0 10px;
-
-  font-size: 19px;
-  font-weight: bold;
-}
-
-.pokemon-types {
-  margin: 0 0 14px;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 6px;
-}
-
-.pokemon-card .btn {
-  margin-top: auto;
-
-  align-self: flex-start;
-}
-
-/* ========================================
-   TYPE CARD
-   ======================================== */
-
-.type-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.type-card-badge {
-  margin: 12px 0 8px;
-}
-
-.type-card-example {
-  margin: 0;
-
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* ========================================
-   TYPE BADGES
-   ======================================== */
-
-.type-badge {
-  display: inline-block;
-
-  padding: 4px 12px;
-
-  border-radius: 999px;
-
-  color: var(--white);
-
-  font-size: 12px;
-  font-weight: bold;
-
-  letter-spacing: 0.04em;
-}
-
-.type-badge.normal {
-  background-color: var(--gray);
-  color: var(--black);
-}
-
-.type-badge.fuego {
-  background-color: var(--red);
-}
-
-.type-badge.agua {
-  background-color: var(--blue);
-}
-
-.type-badge.electrico {
-  background-color: var(--yellow);
-  color: var(--black);
-}
-
-.type-badge.planta {
-  background-color: var(--green);
-}
-
-.type-badge.hielo {
-  background-color: #5fc9d6;
-}
-
-.type-badge.veneno {
-  background-color: #a45ec4;
-}
-
-.type-badge.tierra {
-  background-color: #b98a3d;
-}
-
-.type-badge.volador {
-  background-color: #7ea8e0;
-}
-
-.type-badge.psiquico {
-  background-color: #d16ba5;
-}
-
-.type-badge.lucha {
-  background-color: #c04a3a;
-}
-
-.type-badge.bicho {
-  background-color: #7fa33a;
-}
-
-.type-badge.roca {
-  background-color: #a68b52;
-}
-
-.type-badge.fantasma {
-  background-color: #6b5b95;
-}
-
-.type-badge.dragon {
-  background-color: #6a7ce0;
-}
-
-.type-badge.siniestro {
-  background-color: #4a4459;
-}
-
-.type-badge.acero {
-  background-color: #8f9bb3;
-}
-
-.type-badge.hada {
-  background-color: #e08fc0;
-}
-
-/* ========================================
-   VIDEO BLOCK
-   ======================================== */
-
-.video-placeholder {
-  min-height: 320px;
-
-  border-radius: 12px;
-
-  background-color: var(--black);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-placeholder span {
-  color: var(--gray);
-
-  font-size: 16px;
-  font-weight: bold;
-
-  letter-spacing: 0.1em;
-}
-
-/* ========================================
-   INTRO SPLIT (TEXT + IMAGE)
-   ======================================== */
-
-.intro-split {
-  display: flex;
-  align-items: flex-start;
-
-  gap: 24px;
-}
-
-.intro-split-text {
-  flex: 1;
-}
-
-.intro-split-media {
-  width: 260px;
-
-  min-height: 190px;
-}
-
-/* ========================================
-   TIMELINE
-   ======================================== */
-
-.timeline {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 16px;
-}
-
-.timeline-item {
-  display: grid;
-
-  grid-template-columns: 110px minmax(0, 1fr);
-
-  align-items: stretch;
-
-  gap: 20px;
-}
-
-.timeline-year {
-  margin: 0;
-
-  border-radius: 12px;
-
-  background-color: var(--red);
-  color: var(--white);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.timeline-card {
-  padding: 16px 20px;
-
-  border: 1px solid var(--gray);
-
-  border-radius: 12px;
-
-  background-color: var(--white);
-
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-}
-
-.timeline-title {
-  margin: 0 0 6px;
-
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.timeline-text {
-  margin: 0;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
-
-/* ========================================
-   LINK CARD
-   ======================================== */
-
-.link-card {
-  padding: 16px;
-
-  display: flex;
-  align-items: flex-start;
-
-  gap: 14px;
-}
-
-.link-logo {
-  width: 48px;
-  height: 48px;
-
-  flex-shrink: 0;
-
-  border-radius: 12px;
-
-  color: var(--white);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.link-logo--red {
-  background-color: var(--red);
-}
-
-.link-logo--blue {
-  background-color: var(--blue);
-}
-
-.link-logo--green {
-  background-color: var(--green);
-}
-
-.link-logo--yellow {
-  background-color: var(--yellow);
-  color: var(--black);
-}
-
-/* Selector de dos clases: gana a la regla base .content-panel h2 */
-
-.content-panel .link-name {
-  margin: 0 0 2px;
-
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.link-domain {
-  margin: 0 0 6px;
-
-  color: var(--red);
-
-  font-size: 13px;
-  font-weight: bold;
-}
-
-.link-text {
-  margin: 0;
-
-  font-size: 14px;
-
-  line-height: 1.5;
-}
+.filters-select { min-width: 190px; cursor: pointer; }
+.filters-input:focus, .filters-select:focus { outline: none; border-color: var(--red); }
+
+/* INSIGNIAS DE TIPO — un color por tipo, solo datos */
+.type-badge { display: inline-block; padding: 4px 12px; border-radius: 999px; color: var(--white); font-size: 12px; font-weight: bold; letter-spacing: 0.04em; }
+.type-badge.normal { background: var(--gray); color: var(--black); }
+.type-badge.electrico { background: var(--yellow); color: var(--black); }
+.type-badge.fuego { background: var(--red); }
+.type-badge.agua { background: var(--blue); }
+.type-badge.planta { background: var(--green); }
+.type-badge.hada { background: #e08fc0; }
+.type-badge.veneno { background: #a45ec4; }
+.type-badge.psiquico { background: #d16ba5; }
+
+/* LÍNEA DE TIEMPO */
+.timeline { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.timeline-item { display: grid; grid-template-columns: 110px minmax(0, 1fr); align-items: stretch; gap: 20px; }
+.timeline-year { margin: 0; border-radius: var(--radius); background: var(--red); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: bold; }
+.timeline-card { padding: 16px 20px; }
+.timeline-title { margin: 0 0 6px; font-size: 17px; font-weight: bold; }
+.timeline-text { margin: 0; font-size: 14px; line-height: 1.5; }
+
+/* INTRODUCCIÓN (texto + imagen) */
+.intro-split { display: flex; align-items: flex-start; gap: 24px; }
+.intro-split-text { flex: 1; }
+.intro-split-media { width: 260px; min-height: 190px; }
+
+/* TARJETAS DE ENLACES */
+.link-card { position: relative; padding: 16px; display: flex; align-items: flex-start; gap: 14px; }
+.link-logo { width: 48px; height: 48px; flex-shrink: 0; border-radius: var(--radius); background: var(--white); object-fit: contain; }
+/* Enlace estirado: el <a> cubre toda la tarjeta, pero el nombre accesible sigue siendo el del sitio */
+.link-name a { color: inherit; text-decoration: none; }
+.link-name a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.link-name a:hover { color: var(--red); }
+.link-name { margin: 0 0 2px; font-size: 17px; font-weight: bold; }
+.link-domain { margin: 0 0 6px; color: var(--red); font-size: 13px; font-weight: bold; }
+.link-text { margin: 0; font-size: 14px; line-height: 1.5; }

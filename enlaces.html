@@ -3,199 +3,197 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Pokémon's World | Enlaces</title>
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
-
   <body class="page">
-    <!-- HEADER -->
+    <!-- Cabecera -->
     <header class="header">
       <div class="header-container">
         <!-- Logo -->
         <div class="brand">
           <div class="pokeball"></div>
-
           <div>
             <h1>Pokémon's World</h1>
-
             <span> SISTEMA POKÉDEX </span>
           </div>
         </div>
-
-        <!-- Header navigation -->
+        <!-- Navegación principal -->
         <nav class="header-nav">
           <a href="index.html"> Inicio </a>
-
           <a href="pokedex.html"> Pokédex </a>
-
           <a href="tipos.html"> Tipos </a>
-
           <a href="historia.html"> Historia </a>
-
           <a href="enlaces.html" class="active"> Enlaces </a>
         </nav>
-
-        <!-- Music -->
+        <!-- Botón de música -->
         <button class="music-button">▶ Desconectar música</button>
       </div>
     </header>
-
-    <!-- PAGE LAYOUT -->
+    <!-- Estructura de la página -->
     <div class="page-layout">
-      <!-- LEFT: NAVIGATION -->
+      <!-- Menú lateral -->
       <aside class="left-sidebar">
         <div class="navigation-panel">
           <p class="panel-title">NAVEGACIÓN DEL SISTEMA</p>
-
           <nav class="side-nav">
-            <a href="index.html"> Inicio </a>
-
-            <a href="pokedex.html"> Pokédex </a>
-
-            <a href="tipos.html"> Tipos </a>
-
-            <a href="historia.html"> Historia </a>
-
-            <a href="enlaces.html" class="active"> Enlaces </a>
+            <a href="index.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+              </svg>
+              Inicio
+            </a>
+            <a href="pokedex.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z" />
+                <path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z" />
+              </svg>
+              Pokédex
+            </a>
+            <a href="tipos.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                />
+                <circle cx="7" cy="7" r="1.2" />
+              </svg>
+              Tipos
+            </a>
+            <a href="historia.html">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5.2l3.4 2" />
+              </svg>
+              Historia
+            </a>
+            <a href="enlaces.html" class="active">
+              <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+              </svg>
+              Enlaces
+            </a>
           </nav>
         </div>
       </aside>
-
-      <!-- CENTER: MAIN CONTENT -->
+      <!-- Contenido principal -->
       <main class="main-content">
         <section class="content-panel">
           <p class="panel-title">CONTENIDO PRINCIPAL</p>
-
-          <!-- PAGE TITLE -->
+          <!-- Título de la página -->
           <h1 class="page-title page-title--underline">Enlaces de interés</h1>
-
           <p class="page-intro">
-            Webs oficiales y de la comunidad para seguir aprendiendo sobre
-            Pokémon.
+            Webs oficiales y de la comunidad para seguir aprendiendo sobre Pokémon.
           </p>
-
-          <!-- LINKS GRID -->
+          <!-- Enlaces -->
           <div class="card-grid card-grid--2">
             <article class="link-card">
-              <div class="link-logo link-logo--red">P</div>
-
+              <img
+                class="link-logo"
+                src="img/logos/pokemon-com.png"
+                alt=""
+                width="48"
+                height="48"
+              />
               <div class="link-body">
-                <h2 class="link-name">Pokémon.com</h2>
-
+                <h2 class="link-name"><a href="https://www.pokemon.com">Pokémon.com</a></h2>
                 <p class="link-domain">pokemon.com</p>
-
                 <p class="link-text">Web oficial de The Pokémon Company.</p>
               </div>
             </article>
-
             <article class="link-card">
-              <div class="link-logo link-logo--yellow">B</div>
-
+              <img class="link-logo" src="img/logos/bulbapedia.png" alt="" width="48" height="48" />
               <div class="link-body">
-                <h2 class="link-name">Bulbapedia</h2>
-
+                <h2 class="link-name">
+                  <a href="https://bulbapedia.bulbagarden.net">Bulbapedia</a>
+                </h2>
                 <p class="link-domain">bulbapedia.bulbagarden.net</p>
-
                 <p class="link-text">Enciclopedia colaborativa de la saga.</p>
               </div>
             </article>
-
             <article class="link-card">
-              <div class="link-logo link-logo--blue">S</div>
-
+              <img class="link-logo" src="img/logos/serebii.png" alt="" width="48" height="48" />
               <div class="link-body">
-                <h2 class="link-name">Serebii.net</h2>
-
+                <h2 class="link-name"><a href="https://serebii.net">Serebii.net</a></h2>
                 <p class="link-domain">serebii.net</p>
-
                 <p class="link-text">Noticias y datos de los juegos.</p>
               </div>
             </article>
-
             <article class="link-card">
-              <div class="link-logo link-logo--green">P</div>
-
+              <img class="link-logo" src="img/logos/pokemongo.png" alt="" width="48" height="48" />
               <div class="link-body">
-                <h2 class="link-name">Pokémon GO</h2>
-
+                <h2 class="link-name"><a href="https://pokemongo.com">Pokémon GO</a></h2>
                 <p class="link-domain">pokemongo.com</p>
-
                 <p class="link-text">Sitio oficial del juego para móviles.</p>
               </div>
             </article>
-
             <article class="link-card">
-              <div class="link-logo link-logo--yellow">P</div>
-
+              <img
+                class="link-logo"
+                src="img/logos/pokemonshowdown.png"
+                alt=""
+                width="48"
+                height="48"
+              />
               <div class="link-body">
-                <h2 class="link-name">Pokémon Showdown</h2>
-
+                <h2 class="link-name">
+                  <a href="https://pokemonshowdown.com">Pokémon Showdown</a>
+                </h2>
                 <p class="link-domain">pokemonshowdown.com</p>
-
                 <p class="link-text">Simulador de combates online.</p>
               </div>
             </article>
-
             <article class="link-card">
-              <div class="link-logo link-logo--red">P</div>
-
+              <img
+                class="link-logo"
+                src="img/logos/pokemoncenter.png"
+                alt=""
+                width="48"
+                height="48"
+              />
               <div class="link-body">
-                <h2 class="link-name">Pokémon Center</h2>
-
+                <h2 class="link-name">
+                  <a href="https://www.pokemoncenter.com">Pokémon Center</a>
+                </h2>
                 <p class="link-domain">pokemoncenter.com</p>
-
                 <p class="link-text">Tienda oficial de merchandising.</p>
               </div>
             </article>
           </div>
         </section>
       </main>
-
-      <!-- RIGHT: SIDEBAR / ADS -->
+      <!-- Publicidad -->
       <aside class="right-sidebar">
-        <!-- Ad 208 x 250 -->
+        <!-- Anuncio 208x250 -->
         <div class="sidebar-panel">
           <p class="panel-title">PUBLICIDAD</p>
-
           <div class="ad-placeholder ad-placeholder--tall">
             <span> Anuncio 208 × 250 </span>
           </div>
         </div>
-
-        <!-- Fun fact -->
+        <!-- Dato curioso -->
         <div class="fact-box">
           <p class="fact-title">¿SABÍAS QUE...?</p>
-
           <p class="fact-text">
-            Hay 18 tipos de Pokémon y cada uno tiene ventajas y desventajas
-            frente a otros.
+            Hay 18 tipos de Pokémon y cada uno tiene ventajas y desventajas frente a otros.
           </p>
         </div>
-
-        <!-- Ad 208 x 120 -->
+        <!-- Anuncio 208x120 -->
         <div class="sidebar-panel">
           <p class="panel-title">PUBLICIDAD</p>
-
           <div class="ad-placeholder ad-placeholder--wide">
             <span> Anuncio 208 × 120 </span>
           </div>
         </div>
       </aside>
     </div>
-
-    <!-- FOOTER -->
+    <!-- Pie de página -->
     <footer class="footer">
       <div class="footer-container">
-        <p class="footer-copy">
-          © 2026 Juan Manuel y Rubén. Todos los derechos reservados.
-        </p>
-
+        <p class="footer-copy">© 2026 Juan Manuel y Rubén. Todos los derechos reservados.</p>
         <p class="footer-note">
-          Pokémon's World es un proyecto de clase sin ánimo de lucro. Pokémon y
-          sus personajes son marcas de Nintendo, Creatures Inc. y GAME FREAK
-          Inc.
+          Pokémon's World es un proyecto de clase sin ánimo de lucro. Pokémon y sus personajes son
+          marcas de Nintendo, Creatures Inc. y GAME FREAK Inc.
         </p>
       </div>
     </footer>
