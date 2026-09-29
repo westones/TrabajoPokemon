@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokémon's World | Inicio</title>
+    <title>Pokémon's World | Tipos</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page">
@@ -20,9 +20,9 @@
         </div>
         <!-- Navegación principal -->
         <nav class="header-nav">
-          <a href="index.html" class="active"> Inicio </a>
+          <a href="index.html"> Inicio </a>
           <a href="pokedex.html"> Pokédex </a>
-          <a href="tipos.html"> Tipos </a>
+          <a href="tipos.html" class="active"> Tipos </a>
           <a href="historia.html"> Historia </a>
           <a href="enlaces.html"> Enlaces </a>
         </nav>
@@ -37,7 +37,7 @@
         <div class="navigation-panel">
           <p class="panel-title">NAVEGACIÓN DEL SISTEMA</p>
           <nav class="side-nav">
-            <a href="index.html" class="active">
+            <a href="index.html">
               <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
               </svg>
@@ -50,7 +50,7 @@
               </svg>
               Pokédex
             </a>
-            <a href="tipos.html">
+            <a href="tipos.html" class="active">
               <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
@@ -80,49 +80,78 @@
       <main class="main-content">
         <section class="content-panel">
           <p class="panel-title">CONTENIDO PRINCIPAL</p>
-          <!-- Banner principal -->
-          <div class="hero">
-            <span class="hero-label">POKÉDEX DE FANS</span>
-            <h1 class="hero-title">Bienvenido, entrenador</h1>
-            <p class="hero-text">Historia, tipos y enlaces de la saga Pokémon en un solo sitio.</p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="historia.html">Ver historia</a>
-              <a class="btn btn-ghost" href="tipos.html">Ver tipos</a>
-            </div>
-          </div>
-          <!-- Tarjetas de inicio -->
+          <!-- Título de la página -->
+          <h1 class="page-title page-title--underline">Tipos de Pokémon</h1>
+          <p class="page-intro">
+            Existen 18 tipos. Cada uno tiene fortalezas y debilidades frente a los demás.
+          </p>
+          <!-- Tipos de Pokémon -->
           <div class="card-grid card-grid--3">
-            <article class="card">
-              <div class="img-placeholder">
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-              <div class="card-body">
-                <h2 class="card-title">Historia</h2>
-                <p class="card-text">Cómo empezó todo en 1996 y cómo creció la saga.</p>
-                <a class="card-link" href="historia.html">Ver historia →</a>
-              </div>
+              <p class="type-card-badge">
+                <span class="type-badge fuego">Fuego</span>
+              </p>
+              <p class="type-card-example">Ejemplo: Charmander</p>
             </article>
-            <article class="card">
-              <div class="img-placeholder">
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-              <div class="card-body">
-                <h2 class="card-title">Tipos</h2>
-                <p class="card-text">Los 18 tipos con imágenes y un video explicativo.</p>
-                <a class="card-link" href="tipos.html">Ver tipos →</a>
-              </div>
+              <p class="type-card-badge">
+                <span class="type-badge agua">Agua</span>
+              </p>
+              <p class="type-card-example">Ejemplo: Squirtle</p>
             </article>
-            <article class="card">
-              <div class="img-placeholder">
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
                 <span> IMAGEN </span>
               </div>
-              <div class="card-body">
-                <h2 class="card-title">Enlaces</h2>
-                <p class="card-text">Webs oficiales y de la comunidad para seguir aprendiendo.</p>
-                <a class="card-link" href="enlaces.html">Ver enlaces →</a>
+              <p class="type-card-badge">
+                <span class="type-badge planta">Planta</span>
+              </p>
+              <p class="type-card-example">Ejemplo: Bulbasaur</p>
+            </article>
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
+                <span> IMAGEN </span>
               </div>
+              <p class="type-card-badge">
+                <span class="type-badge electrico">Eléctrico</span>
+              </p>
+              <p class="type-card-example">Ejemplo: Pikachu</p>
+            </article>
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
+                <span> IMAGEN </span>
+              </div>
+              <p class="type-card-badge">
+                <span class="type-badge psiquico">Psíquico</span>
+              </p>
+              <p class="type-card-example">Ejemplo: Mewtwo</p>
+            </article>
+            <article class="type-card">
+              <div class="img-placeholder img-placeholder--small">
+                <span> IMAGEN </span>
+              </div>
+              <p class="type-card-badge">
+                <span class="type-badge normal">Normal</span>
+              </p>
+              <p class="type-card-example">Ejemplo: Eevee</p>
             </article>
           </div>
+          <p class="section-actions">
+            <button class="btn btn-primary" type="button">Ver los 18 tipos</button>
+          </p>
+          <!-- Video -->
+          <section class="video-block">
+            <h2 class="section-title">Video: los tipos y sus ventajas</h2>
+            <div class="video-placeholder">
+              <span> VIDEO </span>
+            </div>
+          </section>
         </section>
       </main>
       <!-- Publicidad -->
@@ -160,6 +189,5 @@
         </p>
       </div>
     </footer>
-    <script type="module" src="js/script.js"></script>
   </body>
 </html>
