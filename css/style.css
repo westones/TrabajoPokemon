@@ -6,6 +6,7 @@
   --white: #fff;
   --light: #f2f2f2;
   --gray: #b8b8b8;
+  --gray-text: #6f6f6f;
   --blue: #3b82a0;
   --green: #6dbb5a;
   --yellow: #ffcb05;
@@ -144,20 +145,6 @@ body {
   color: var(--yellow);
 }
 
-.music-button {
-  padding: 9px 16px;
-  border: 1px solid var(--dark-red);
-  border-radius: 999px;
-  background: var(--red);
-  color: var(--white);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.music-button:hover {
-  background: var(--dark-red);
-}
-
 /* REJILLA PRINCIPAL + NAVEGACIÓN LATERAL */
 .page-layout {
   padding: var(--pad);
@@ -294,6 +281,10 @@ body {
 .video-placeholder span {
   color: var(--gray);
   font-weight: 600;
+}
+.ad-placeholder span,
+.img-placeholder span {
+  color: var(--gray-text);
 }
 .ad-placeholder--wide,
 .img-placeholder--small {
@@ -434,6 +425,16 @@ body {
 .btn-outline:hover {
   background: var(--red);
   color: var(--white);
+}
+.music-button {
+  padding: 9px 16px;
+  border-color: var(--dark-red);
+  border-radius: 999px;
+  background: var(--red);
+  color: var(--white);
+}
+.music-button:hover {
+  background: var(--dark-red);
 }
 
 /* TARJETAS + REJILLAS */
