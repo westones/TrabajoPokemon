@@ -129,22 +129,6 @@ body {
   background: var(--white);
 }
 
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.header-nav a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-}
-.header-nav a:hover,
-.header-nav a.active {
-  color: var(--yellow);
-}
-
 /* REJILLA PRINCIPAL + NAVEGACIÓN LATERAL */
 .page-layout {
   padding: var(--pad);
@@ -724,12 +708,6 @@ body {
     gap: 12px;
     padding-top: 14px;
     padding-bottom: 14px;
-  }
-  .header-nav {
-    order: 3;
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 16px;
   }
   .page-layout {
     grid-template-columns: 1fr;
