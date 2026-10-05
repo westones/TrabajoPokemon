@@ -145,7 +145,7 @@ body {
   color: var(--yellow);
 }
 
-.music-button {
+#music-button {
   padding: 9px 16px;
   border: 1px solid var(--dark-red);
   border-radius: 999px;

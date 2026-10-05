@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page">
+    <audio id="background-music" autoplay loop>
+      <source src="audio/bg-audio.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el elemento de audio.
+    </audio>
     <!-- Cabecera -->
     <header class="header">
       <div class="header-container">
@@ -27,7 +31,7 @@
           <a href="enlaces.html"> Enlaces </a>
         </nav>
         <!-- Botón de música -->
-        <button class="music-button">▶ Desconectar música</button>
+        <button id="music-button" type="loop">▶ Encender música</button>
       </div>
     </header>
     <!-- Estructura de la página -->
@@ -39,7 +43,9 @@
           <nav class="side-nav">
             <a href="index.html" class="active">
               <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />
+                <path
+                  d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"
+                />
               </svg>
               Inicio
             </a>
@@ -68,8 +74,12 @@
             </a>
             <a href="enlaces.html">
               <svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                <path
+                  d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                />
+                <path
+                  d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                />
               </svg>
               Enlaces
             </a>
@@ -84,7 +94,9 @@
           <div class="hero">
             <span class="hero-label">POKÉDEX DE FANS</span>
             <h1 class="hero-title">Bienvenido, entrenador</h1>
-            <p class="hero-text">Historia, tipos y enlaces de la saga Pokémon en un solo sitio.</p>
+            <p class="hero-text">
+              Historia, tipos y enlaces de la saga Pokémon en un solo sitio.
+            </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="historia.html">Ver historia</a>
               <a class="btn btn-ghost" href="tipos.html">Ver tipos</a>
@@ -98,7 +110,9 @@
               </div>
               <div class="card-body">
                 <h2 class="card-title">Historia</h2>
-                <p class="card-text">Cómo empezó todo en 1996 y cómo creció la saga.</p>
+                <p class="card-text">
+                  Cómo empezó todo en 1996 y cómo creció la saga.
+                </p>
                 <a class="card-link" href="historia.html">Ver historia →</a>
               </div>
             </article>
@@ -108,7 +122,9 @@
               </div>
               <div class="card-body">
                 <h2 class="card-title">Tipos</h2>
-                <p class="card-text">Los 18 tipos con imágenes y un video explicativo.</p>
+                <p class="card-text">
+                  Los 18 tipos con imágenes y un video explicativo.
+                </p>
                 <a class="card-link" href="tipos.html">Ver tipos →</a>
               </div>
             </article>
@@ -118,7 +134,9 @@
               </div>
               <div class="card-body">
                 <h2 class="card-title">Enlaces</h2>
-                <p class="card-text">Webs oficiales y de la comunidad para seguir aprendiendo.</p>
+                <p class="card-text">
+                  Webs oficiales y de la comunidad para seguir aprendiendo.
+                </p>
                 <a class="card-link" href="enlaces.html">Ver enlaces →</a>
               </div>
             </article>
@@ -138,7 +156,8 @@
         <div class="fact-box">
           <p class="fact-title">¿SABÍAS QUE...?</p>
           <p class="fact-text">
-            Hay 18 tipos de Pokémon y cada uno tiene ventajas y desventajas frente a otros.
+            Hay 18 tipos de Pokémon y cada uno tiene ventajas y desventajas
+            frente a otros.
           </p>
         </div>
         <!-- Anuncio 208x120 -->
@@ -153,10 +172,13 @@
     <!-- Pie de página -->
     <footer class="footer">
       <div class="footer-container">
-        <p class="footer-copy">© 2026 Juan Manuel y Rubén. Todos los derechos reservados.</p>
+        <p class="footer-copy">
+          © 2026 Juan Manuel y Rubén. Todos los derechos reservados.
+        </p>
         <p class="footer-note">
-          Pokémon's World es un proyecto de clase sin ánimo de lucro. Pokémon y sus personajes son
-          marcas de Nintendo, Creatures Inc. y GAME FREAK Inc.
+          Pokémon's World es un proyecto de clase sin ánimo de lucro. Pokémon y
+          sus personajes son marcas de Nintendo, Creatures Inc. y GAME FREAK
+          Inc.
         </p>
       </div>
     </footer>
