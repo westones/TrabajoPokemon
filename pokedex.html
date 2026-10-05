@@ -97,114 +97,45 @@
             <div class="filters-field">
               <label class="filters-label" for="filtro-tipo">Tipo</label>
               <select class="filters-select" id="filtro-tipo">
-                <option selected>Todos los tipos</option>
-                <option>Normal</option>
-                <option>Fuego</option>
-                <option>Agua</option>
-                <option>Eléctrico</option>
-                <option>Planta</option>
-                <option>Hielo</option>
-                <option>Veneno</option>
-                <option>Tierra</option>
-                <option>Volador</option>
-                <option>Psíquico</option>
-                <option>Lucha</option>
-                <option>Bicho</option>
-                <option>Roca</option>
-                <option>Fantasma</option>
-                <option>Dragón</option>
-                <option>Siniestro</option>
-                <option>Acero</option>
-                <option>Hada</option>
+                <option value="" selected>Todos los tipos</option>
+                <option value="normal">Normal</option>
+                <option value="fire">Fuego</option>
+                <option value="water">Agua</option>
+                <option value="electric">Eléctrico</option>
+                <option value="grass">Planta</option>
+                <option value="ice">Hielo</option>
+                <option value="poison">Veneno</option>
+                <option value="ground">Tierra</option>
+                <option value="flying">Volador</option>
+                <option value="psychic">Psíquico</option>
+                <option value="fighting">Lucha</option>
+                <option value="bug">Bicho</option>
+                <option value="rock">Roca</option>
+                <option value="ghost">Fantasma</option>
+                <option value="dragon">Dragón</option>
+                <option value="dark">Siniestro</option>
+                <option value="steel">Acero</option>
+                <option value="fairy">Hada</option>
               </select>
             </div>
             <div class="filters-field">
               <label class="filters-label" for="filtro-generacion">Generación</label>
               <select class="filters-select" id="filtro-generacion">
-                <option selected>Todas las generaciones</option>
-                <option>Primera generación</option>
-                <option>Segunda generación</option>
-                <option>Tercera generación</option>
-                <option>Cuarta generación</option>
-                <option>Quinta generación</option>
-                <option>Sexta generación</option>
-                <option>Séptima generación</option>
-                <option>Octava generación</option>
-                <option>Novena generación</option>
+                <option value="" selected>Todas las generaciones</option>
+                <option value="1">Primera generación</option>
+                <option value="2">Segunda generación</option>
+                <option value="3">Tercera generación</option>
+                <option value="4">Cuarta generación</option>
+                <option value="5">Quinta generación</option>
+                <option value="6">Sexta generación</option>
+                <option value="7">Séptima generación</option>
+                <option value="8">Octava generación</option>
+                <option value="9">Novena generación</option>
               </select>
             </div>
           </div>
-          <!-- Lista de Pokémon -->
-          <div class="card-grid card-grid--3">
-            <article class="pokemon-card">
-              <p class="pokemon-number">#001</p>
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
-              </div>
-              <h2 class="pokemon-name">Bulbasaur</h2>
-              <p class="pokemon-types">
-                <span class="type-badge planta">Planta</span>
-                <span class="type-badge veneno">Veneno</span>
-              </p>
-              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
-            </article>
-            <article class="pokemon-card">
-              <p class="pokemon-number">#004</p>
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
-              </div>
-              <h2 class="pokemon-name">Charmander</h2>
-              <p class="pokemon-types">
-                <span class="type-badge fuego">Fuego</span>
-              </p>
-              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
-            </article>
-            <article class="pokemon-card">
-              <p class="pokemon-number">#007</p>
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
-              </div>
-              <h2 class="pokemon-name">Squirtle</h2>
-              <p class="pokemon-types">
-                <span class="type-badge agua">Agua</span>
-              </p>
-              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
-            </article>
-            <article class="pokemon-card">
-              <p class="pokemon-number">#025</p>
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
-              </div>
-              <h2 class="pokemon-name">Pikachu</h2>
-              <p class="pokemon-types">
-                <span class="type-badge electrico">Eléctrico</span>
-              </p>
-              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
-            </article>
-            <article class="pokemon-card">
-              <p class="pokemon-number">#039</p>
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
-              </div>
-              <h2 class="pokemon-name">Jigglypuff</h2>
-              <p class="pokemon-types">
-                <span class="type-badge normal">Normal</span>
-                <span class="type-badge hada">Hada</span>
-              </p>
-              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
-            </article>
-            <article class="pokemon-card">
-              <p class="pokemon-number">#133</p>
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
-              </div>
-              <h2 class="pokemon-name">Eevee</h2>
-              <p class="pokemon-types">
-                <span class="type-badge normal">Normal</span>
-              </p>
-              <button class="btn btn-outline btn-small" type="button">Ver detalles</button>
-            </article>
-          </div>
+          <!-- Lista de Pokémon (se rellena desde js/script.js con la PokéAPI) -->
+          <div class="card-grid card-grid--3" id="lista-pokemon"></div>
         </section>
       </main>
       <!-- Contenido lateral -->
@@ -246,5 +177,18 @@
         </p>
       </div>
     </footer>
+    <!-- Ventana de detalles del Pokémon -->
+    <dialog class="detalle" id="detalle-pokemon">
+      <div class="detalle-card">
+        <button class="detalle-cerrar" id="detalle-cerrar" type="button" aria-label="Cerrar">×</button>
+        <img class="detalle-img" id="detalle-img" src="" alt="" />
+        <p class="detalle-numero" id="detalle-numero"></p>
+        <h2 class="detalle-nombre" id="detalle-nombre"></h2>
+        <p class="detalle-tipos" id="detalle-tipos"></p>
+        <ul class="detalle-datos" id="detalle-datos"></ul>
+      </div>
+    </dialog>
+    <script src="js/api.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
