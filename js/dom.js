@@ -198,21 +198,55 @@ function alternarTipos() {
 
 // --- Música de fondo ---
 
+// Iconos SVG en vez de emojis, para que se vean igual en todos los navegadores
+const ICONO_MUSICA_APAGADA =
+  '<svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">' +
+  '<polygon points="6 4 20 12 6 20 6 4" /></svg>';
+
+const ICONO_MUSICA_ENCENDIDA =
+  '<svg class="music-icon" viewBox="0 0 24 24" aria-hidden="true">' +
+  '<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />' +
+  '<line x1="23" y1="9" x2="17" y2="15" />' +
+  '<line x1="17" y1="9" x2="23" y2="15" /></svg>';
+
 // Conecta el botón de música con el audio (solo si la página los tiene)
 function activarMusica() {
   const musica = document.querySelector("#background-music");
   const boton = document.querySelector("#music-button");
   if (!musica || !boton) return;
 
+  // play() devuelve una promesa en los navegadores modernos. Si el navegador
+  // bloquea el autoplay, la rechaza: lo capturamos para que no dé error.
+  function intentarReproducir() {
+    const promesa = musica.play();
+    if (promesa && promesa.catch) promesa.catch(function () {});
+  }
+
+  // Pinta el botón según el estado real del audio
+  function pintarBoton() {
+    const sonando = !musica.paused;
+    const icono = sonando ? ICONO_MUSICA_ENCENDIDA : ICONO_MUSICA_APAGADA;
+    const texto = sonando ? "Silenciar" : "Encender música";
+    boton.innerHTML = icono + "<span>" + texto + "</span>";
+    boton.setAttribute("aria-pressed", sonando ? "true" : "false");
+  }
+
+  // Intentamos arrancar la música (unos navegadores lo permiten y otros no)
+  intentarReproducir();
+  pintarBoton();
+
   boton.addEventListener("click", function () {
     if (musica.paused) {
-      musica.play();
-      boton.textContent = "🔇 Silenciar";
+      intentarReproducir();
     } else {
       musica.pause();
-      boton.textContent = "🔊 Música";
     }
+    pintarBoton();
   });
+
+  // Si el navegador arranca o para el audio por su cuenta, mantenemos el botón al día
+  musica.addEventListener("play", pintarBoton);
+  musica.addEventListener("pause", pintarBoton);
 }
 
 // --- Conectar el HTML con la lógica de script.js ---
