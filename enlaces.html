@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon's World | Enlaces</title>
+    <meta
+      name="description"
+      content="Webs oficiales y de la comunidad para seguir aprendiendo sobre Pokémon."
+    />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page">
@@ -14,20 +19,12 @@
         <div class="brand">
           <div class="pokeball"></div>
           <div>
-            <h1>Pokémon's World</h1>
+            <p class="brand-name">Pokémon's World</p>
             <span> SISTEMA POKÉDEX </span>
           </div>
         </div>
-        <!-- Navegación principal -->
-        <nav class="header-nav">
-          <a href="index.html"> Inicio </a>
-          <a href="pokedex.html"> Pokédex </a>
-          <a href="tipos.html"> Tipos </a>
-          <a href="historia.html"> Historia </a>
-          <a href="enlaces.html" class="active"> Enlaces </a>
-        </nav>
         <!-- Botón de música -->
-        <button class="music-button">▶ Desconectar música</button>
+        <button class="btn music-button">▶ Desconectar música</button>
       </div>
     </header>
     <!-- Estructura de la página -->
@@ -96,7 +93,7 @@
                 height="48"
               />
               <div class="link-body">
-                <h2 class="link-name"><a href="https://www.pokemon.com">Pokémon.com</a></h2>
+                <h2 class="link-name"><a href="https://www.pokemon.com" target="_blank" rel="noopener noreferrer">Pokémon.com</a></h2>
                 <p class="link-domain">pokemon.com</p>
                 <p class="link-text">Web oficial de The Pokémon Company.</p>
               </div>
@@ -105,7 +102,7 @@
               <img class="link-logo" src="img/logos/bulbapedia.png" alt="" width="48" height="48" />
               <div class="link-body">
                 <h2 class="link-name">
-                  <a href="https://bulbapedia.bulbagarden.net">Bulbapedia</a>
+                  <a href="https://bulbapedia.bulbagarden.net" target="_blank" rel="noopener noreferrer">Bulbapedia</a>
                 </h2>
                 <p class="link-domain">bulbapedia.bulbagarden.net</p>
                 <p class="link-text">Enciclopedia colaborativa de la saga.</p>
@@ -114,7 +111,7 @@
             <article class="link-card">
               <img class="link-logo" src="img/logos/serebii.png" alt="" width="48" height="48" />
               <div class="link-body">
-                <h2 class="link-name"><a href="https://serebii.net">Serebii.net</a></h2>
+                <h2 class="link-name"><a href="https://serebii.net" target="_blank" rel="noopener noreferrer">Serebii.net</a></h2>
                 <p class="link-domain">serebii.net</p>
                 <p class="link-text">Noticias y datos de los juegos.</p>
               </div>
@@ -122,7 +119,7 @@
             <article class="link-card">
               <img class="link-logo" src="img/logos/pokemongo.png" alt="" width="48" height="48" />
               <div class="link-body">
-                <h2 class="link-name"><a href="https://pokemongo.com">Pokémon GO</a></h2>
+                <h2 class="link-name"><a href="https://pokemongo.com" target="_blank" rel="noopener noreferrer">Pokémon GO</a></h2>
                 <p class="link-domain">pokemongo.com</p>
                 <p class="link-text">Sitio oficial del juego para móviles.</p>
               </div>
@@ -137,7 +134,7 @@
               />
               <div class="link-body">
                 <h2 class="link-name">
-                  <a href="https://pokemonshowdown.com">Pokémon Showdown</a>
+                  <a href="https://pokemonshowdown.com" target="_blank" rel="noopener noreferrer">Pokémon Showdown</a>
                 </h2>
                 <p class="link-domain">pokemonshowdown.com</p>
                 <p class="link-text">Simulador de combates online.</p>
@@ -153,7 +150,7 @@
               />
               <div class="link-body">
                 <h2 class="link-name">
-                  <a href="https://www.pokemoncenter.com">Pokémon Center</a>
+                  <a href="https://www.pokemoncenter.com" target="_blank" rel="noopener noreferrer">Pokémon Center</a>
                 </h2>
                 <p class="link-domain">pokemoncenter.com</p>
                 <p class="link-text">Tienda oficial de merchandising.</p>
@@ -162,13 +159,17 @@
           </div>
         </section>
       </main>
-      <!-- Publicidad -->
+      <!-- Contenido lateral -->
       <aside class="right-sidebar">
-        <!-- Anuncio 208x250 -->
+        <!-- Pokémon del día -->
         <div class="sidebar-panel">
-          <p class="panel-title">PUBLICIDAD</p>
-          <div class="ad-placeholder ad-placeholder--tall">
-            <span> Anuncio 208 × 250 </span>
+          <p class="panel-title">POKÉMON DEL DÍA</p>
+          <div class="pokemon-day">
+            <div class="img-placeholder pokemon-day-image">
+              <span> IMAGEN </span>
+            </div>
+            <p class="pokemon-day-number">#???</p>
+            <p class="pokemon-day-name">¿Quién será hoy?</p>
           </div>
         </div>
         <!-- Dato curioso -->
@@ -197,5 +198,8 @@
         </p>
       </div>
     </footer>
+    <script src="js/api.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon's World | Historia</title>
+    <meta
+      name="description"
+      content="La historia de Pokémon desde 1996 hasta hoy: juegos, anime y línea del tiempo."
+    />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page">
@@ -14,20 +19,12 @@
         <div class="brand">
           <div class="pokeball"></div>
           <div>
-            <h1>Pokémon's World</h1>
+            <p class="brand-name">Pokémon's World</p>
             <span> SISTEMA POKÉDEX </span>
           </div>
         </div>
-        <!-- Navegación principal -->
-        <nav class="header-nav">
-          <a href="index.html"> Inicio </a>
-          <a href="pokedex.html"> Pokédex </a>
-          <a href="tipos.html"> Tipos </a>
-          <a href="historia.html" class="active"> Historia </a>
-          <a href="enlaces.html"> Enlaces </a>
-        </nav>
         <!-- Botón de música -->
-        <button class="music-button">▶ Desconectar música</button>
+        <button class="btn music-button">▶ Desconectar música</button>
       </div>
     </header>
     <!-- Estructura de la página -->
@@ -90,9 +87,11 @@
                 convertido en una de las franquicias más grandes del mundo.
               </p>
             </div>
-            <div class="img-placeholder intro-split-media">
-              <span> IMAGEN: PORTADA DE LA SAGA </span>
-            </div>
+            <img
+              class="intro-split-media intro-image"
+              src="img/portada-saga.jpg"
+              alt="Portada de los primeros juegos de Pokémon"
+            />
           </div>
           <!-- Línea de tiempo -->
           <h2 class="section-title">Línea del tiempo</h2>
@@ -145,13 +144,17 @@
           </ol>
         </section>
       </main>
-      <!-- Publicidad -->
+      <!-- Contenido lateral -->
       <aside class="right-sidebar">
-        <!-- Anuncio 208x250 -->
+        <!-- Pokémon del día -->
         <div class="sidebar-panel">
-          <p class="panel-title">PUBLICIDAD</p>
-          <div class="ad-placeholder ad-placeholder--tall">
-            <span> Anuncio 208 × 250 </span>
+          <p class="panel-title">POKÉMON DEL DÍA</p>
+          <div class="pokemon-day">
+            <div class="img-placeholder pokemon-day-image">
+              <span> IMAGEN </span>
+            </div>
+            <p class="pokemon-day-number">#???</p>
+            <p class="pokemon-day-name">¿Quién será hoy?</p>
           </div>
         </div>
         <!-- Dato curioso -->
@@ -180,5 +183,8 @@
         </p>
       </div>
     </footer>
+    <script src="js/api.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

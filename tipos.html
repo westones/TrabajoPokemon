@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon's World | Tipos</title>
+    <meta
+      name="description"
+      content="Los 18 tipos de Pokémon con sus fortalezas y debilidades frente a los demás."
+    />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page">
@@ -14,20 +19,12 @@
         <div class="brand">
           <div class="pokeball"></div>
           <div>
-            <h1>Pokémon's World</h1>
+            <p class="brand-name">Pokémon's World</p>
             <span> SISTEMA POKÉDEX </span>
           </div>
         </div>
-        <!-- Navegación principal -->
-        <nav class="header-nav">
-          <a href="index.html"> Inicio </a>
-          <a href="pokedex.html"> Pokédex </a>
-          <a href="tipos.html" class="active"> Tipos </a>
-          <a href="historia.html"> Historia </a>
-          <a href="enlaces.html"> Enlaces </a>
-        </nav>
         <!-- Botón de música -->
-        <button class="music-button">▶ Desconectar música</button>
+        <button class="btn music-button">▶ Desconectar música</button>
       </div>
     </header>
     <!-- Estructura de la página -->
@@ -85,82 +82,164 @@
           <p class="page-intro">
             Existen 18 tipos. Cada uno tiene fortalezas y debilidades frente a los demás.
           </p>
-          <!-- Tipos de Pokémon -->
-          <div class="card-grid card-grid--3">
+          <!-- Tipos de Pokémon (18, hardcodeados) -->
+          <div class="card-grid card-grid--3" id="lista-tipos">
             <article class="type-card">
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander" loading="lazy" />
               </div>
-              <p class="type-card-badge">
-                <span class="type-badge fuego">Fuego</span>
-              </p>
+              <p class="type-card-badge"><span class="type-badge fuego">Fuego</span></p>
               <p class="type-card-example">Ejemplo: Charmander</p>
             </article>
             <article class="type-card">
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png" alt="Squirtle" loading="lazy" />
               </div>
-              <p class="type-card-badge">
-                <span class="type-badge agua">Agua</span>
-              </p>
+              <p class="type-card-badge"><span class="type-badge agua">Agua</span></p>
               <p class="type-card-example">Ejemplo: Squirtle</p>
             </article>
             <article class="type-card">
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="Bulbasaur" loading="lazy" />
               </div>
-              <p class="type-card-badge">
-                <span class="type-badge planta">Planta</span>
-              </p>
+              <p class="type-card-badge"><span class="type-badge planta">Planta</span></p>
               <p class="type-card-example">Ejemplo: Bulbasaur</p>
             </article>
             <article class="type-card">
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" loading="lazy" />
               </div>
-              <p class="type-card-badge">
-                <span class="type-badge electrico">Eléctrico</span>
-              </p>
+              <p class="type-card-badge"><span class="type-badge electrico">Eléctrico</span></p>
               <p class="type-card-example">Ejemplo: Pikachu</p>
             </article>
             <article class="type-card">
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png" alt="Mewtwo" loading="lazy" />
               </div>
-              <p class="type-card-badge">
-                <span class="type-badge psiquico">Psíquico</span>
-              </p>
+              <p class="type-card-badge"><span class="type-badge psiquico">Psíquico</span></p>
               <p class="type-card-example">Ejemplo: Mewtwo</p>
             </article>
             <article class="type-card">
-              <div class="img-placeholder img-placeholder--small">
-                <span> IMAGEN </span>
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png" alt="Eevee" loading="lazy" />
               </div>
-              <p class="type-card-badge">
-                <span class="type-badge normal">Normal</span>
-              </p>
+              <p class="type-card-badge"><span class="type-badge normal">Normal</span></p>
               <p class="type-card-example">Ejemplo: Eevee</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png" alt="Ekans" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge veneno">Veneno</span></p>
+              <p class="type-card-example">Ejemplo: Ekans</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png" alt="Sandshrew" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge tierra">Tierra</span></p>
+              <p class="type-card-example">Ejemplo: Sandshrew</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png" alt="Pidgeot" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge volador">Volador</span></p>
+              <p class="type-card-example">Ejemplo: Pidgeot</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/68.png" alt="Machamp" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge lucha">Lucha</span></p>
+              <p class="type-card-example">Ejemplo: Machamp</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/123.png" alt="Scyther" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge bicho">Bicho</span></p>
+              <p class="type-card-example">Ejemplo: Scyther</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/95.png" alt="Onix" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge roca">Roca</span></p>
+              <p class="type-card-example">Ejemplo: Onix</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png" alt="Gengar" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge fantasma">Fantasma</span></p>
+              <p class="type-card-example">Ejemplo: Gengar</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/131.png" alt="Lapras" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge hielo">Hielo</span></p>
+              <p class="type-card-example">Ejemplo: Lapras</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png" alt="Dragonite" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge dragon">Dragón</span></p>
+              <p class="type-card-example">Ejemplo: Dragonite</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/197.png" alt="Umbreon" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge siniestro">Siniestro</span></p>
+              <p class="type-card-example">Ejemplo: Umbreon</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/208.png" alt="Steelix" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge acero">Acero</span></p>
+              <p class="type-card-example">Ejemplo: Steelix</p>
+            </article>
+            <article class="type-card type-card--oculto">
+              <div class="pokemon-image">
+                <img class="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/35.png" alt="Clefairy" loading="lazy" />
+              </div>
+              <p class="type-card-badge"><span class="type-badge hada">Hada</span></p>
+              <p class="type-card-example">Ejemplo: Clefairy</p>
             </article>
           </div>
           <p class="section-actions">
-            <button class="btn btn-primary" type="button">Ver los 18 tipos</button>
+            <button class="btn btn-primary" id="btn-ver-tipos" type="button">Ver los 18 tipos</button>
           </p>
           <!-- Video -->
           <section class="video-block">
-            <h2 class="section-title">Video: los tipos y sus ventajas</h2>
-            <div class="video-placeholder">
-              <span> VIDEO </span>
+            <h2 class="section-title">Video: Todos los tipos y sus ventajas.</h2>
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube.com/embed/YNZ27m4NdSo"
+                title="Video: los tipos de Pokémon y sus ventajas"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
             </div>
           </section>
         </section>
       </main>
-      <!-- Publicidad -->
+      <!-- Contenido lateral -->
       <aside class="right-sidebar">
-        <!-- Anuncio 208x250 -->
+        <!-- Pokémon del día -->
         <div class="sidebar-panel">
-          <p class="panel-title">PUBLICIDAD</p>
-          <div class="ad-placeholder ad-placeholder--tall">
-            <span> Anuncio 208 × 250 </span>
+          <p class="panel-title">POKÉMON DEL DÍA</p>
+          <div class="pokemon-day">
+            <div class="img-placeholder pokemon-day-image">
+              <span> IMAGEN </span>
+            </div>
+            <p class="pokemon-day-number">#???</p>
+            <p class="pokemon-day-name">¿Quién será hoy?</p>
           </div>
         </div>
         <!-- Dato curioso -->
@@ -189,5 +268,8 @@
         </p>
       </div>
     </footer>
+    <script src="js/api.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

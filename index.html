@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokémon's World | Inicio</title>
+    <meta
+      name="description"
+      content="Pokémon's World: historia, tipos, Pokédex y enlaces de la saga Pokémon en un solo sitio de fans."
+    />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="page">
@@ -18,20 +23,12 @@
         <div class="brand">
           <div class="pokeball"></div>
           <div>
-            <h1>Pokémon's World</h1>
+            <p class="brand-name">Pokémon's World</p>
             <span> SISTEMA POKÉDEX </span>
           </div>
         </div>
-        <!-- Navegación principal -->
-        <nav class="header-nav">
-          <a href="index.html" class="active"> Inicio </a>
-          <a href="pokedex.html"> Pokédex </a>
-          <a href="tipos.html"> Tipos </a>
-          <a href="historia.html"> Historia </a>
-          <a href="enlaces.html"> Enlaces </a>
-        </nav>
         <!-- Botón de música -->
-        <button id="music-button" type="loop">▶ Encender música</button>
+        <button id="music-button" class="btn music-button" type="button">▶ Encender música</button>
       </div>
     </header>
     <!-- Estructura de la página -->
@@ -105,9 +102,11 @@
           <!-- Tarjetas de inicio -->
           <div class="card-grid card-grid--3">
             <article class="card">
-              <div class="img-placeholder">
-                <span> IMAGEN </span>
-              </div>
+              <img
+                class="card-image"
+                src="img/portada-saga.jpg"
+                alt="Portada de los primeros juegos de Pokémon"
+              />
               <div class="card-body">
                 <h2 class="card-title">Historia</h2>
                 <p class="card-text">
@@ -117,8 +116,25 @@
               </div>
             </article>
             <article class="card">
-              <div class="img-placeholder">
-                <span> IMAGEN </span>
+              <div class="card-image card-image--tipos">
+                <span class="type-badge fuego">Fuego</span>
+                <span class="type-badge agua">Agua</span>
+                <span class="type-badge planta">Planta</span>
+                <span class="type-badge electrico">Eléctrico</span>
+                <span class="type-badge psiquico">Psíquico</span>
+                <span class="type-badge normal">Normal</span>
+                <span class="type-badge veneno">Veneno</span>
+                <span class="type-badge tierra">Tierra</span>
+                <span class="type-badge volador">Volador</span>
+                <span class="type-badge lucha">Lucha</span>
+                <span class="type-badge bicho">Bicho</span>
+                <span class="type-badge roca">Roca</span>
+                <span class="type-badge fantasma">Fantasma</span>
+                <span class="type-badge hielo">Hielo</span>
+                <span class="type-badge dragon">Dragón</span>
+                <span class="type-badge siniestro">Siniestro</span>
+                <span class="type-badge acero">Acero</span>
+                <span class="type-badge hada">Hada</span>
               </div>
               <div class="card-body">
                 <h2 class="card-title">Tipos</h2>
@@ -129,8 +145,13 @@
               </div>
             </article>
             <article class="card">
-              <div class="img-placeholder">
-                <span> IMAGEN </span>
+              <div class="card-image card-image--logos">
+                <img src="img/logos/pokemon-com.png" alt="Pokémon.com" />
+                <img src="img/logos/bulbapedia.png" alt="Bulbapedia" />
+                <img src="img/logos/serebii.png" alt="Serebii" />
+                <img src="img/logos/pokemongo.png" alt="Pokémon GO" />
+                <img src="img/logos/pokemonshowdown.png" alt="Pokémon Showdown" />
+                <img src="img/logos/pokemoncenter.png" alt="Pokémon Center" />
               </div>
               <div class="card-body">
                 <h2 class="card-title">Enlaces</h2>
@@ -143,13 +164,17 @@
           </div>
         </section>
       </main>
-      <!-- Publicidad -->
+      <!-- Contenido lateral -->
       <aside class="right-sidebar">
-        <!-- Anuncio 208x250 -->
+        <!-- Pokémon del día -->
         <div class="sidebar-panel">
-          <p class="panel-title">PUBLICIDAD</p>
-          <div class="ad-placeholder ad-placeholder--tall">
-            <span> Anuncio 208 × 250 </span>
+          <p class="panel-title">POKÉMON DEL DÍA</p>
+          <div class="pokemon-day">
+            <div class="img-placeholder pokemon-day-image">
+              <span> IMAGEN </span>
+            </div>
+            <p class="pokemon-day-number">#???</p>
+            <p class="pokemon-day-name">¿Quién será hoy?</p>
           </div>
         </div>
         <!-- Dato curioso -->
@@ -182,6 +207,8 @@
         </p>
       </div>
     </footer>
-    <script type="module" src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dom.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

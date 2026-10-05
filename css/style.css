@@ -6,6 +6,7 @@
   --white: #fff;
   --light: #f2f2f2;
   --gray: #b8b8b8;
+  --gray-text: #6f6f6f;
   --blue: #3b82a0;
   --green: #6dbb5a;
   --yellow: #ffcb05;
@@ -42,8 +43,7 @@ body {
   content: "";
   position: fixed;
   inset: 0;
-  background: url("https://piraticoctopus.home.blog/wp-content/uploads/2018/10/tumblr_pf9jk0OBYS1rv6iido1_540.gif")
-    center / cover no-repeat;
+  background: url("../img/fondo.gif") center / cover no-repeat;
   opacity: 0.12;
   z-index: -1;
   pointer-events: none;
@@ -91,7 +91,7 @@ body {
   align-items: center;
   gap: 12px;
 }
-.brand h1 {
+.brand-name {
   margin: 0;
   color: var(--white);
   font-size: 20px;
@@ -175,7 +175,6 @@ body {
   gap: 16px;
 }
 .navigation-panel {
-  flex: 1;
   padding: 16px;
 }
 .sidebar-panel {
@@ -184,6 +183,9 @@ body {
 .content-panel {
   min-height: 600px;
   padding: 24px;
+}
+.main-content {
+  min-width: 0;
 }
 
 .side-nav {
@@ -294,8 +296,9 @@ body {
   color: var(--gray);
   font-weight: 600;
 }
-.ad-placeholder--tall {
-  min-height: 250px;
+.ad-placeholder span,
+.img-placeholder span {
+  color: var(--gray-text);
 }
 .ad-placeholder--wide,
 .img-placeholder--small {
@@ -309,10 +312,25 @@ body {
   font-size: 12px;
   letter-spacing: 0.04em;
 }
+.video-block {
+  margin-top: 8px;
+}
 .video-placeholder {
   min-height: 320px;
   border-radius: var(--radius);
   background: var(--black);
+}
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--black);
+}
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .video-placeholder span {
   font-size: 16px;
@@ -338,6 +356,34 @@ body {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* POKÉMON DEL DÍA */
+.pokemon-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+.pokemon-day-image {
+  width: 100%;
+}
+.pokemon-day-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.pokemon-day-number {
+  margin: 0;
+  color: var(--red);
+  font-size: 15px;
+  font-weight: bold;
+}
+.pokemon-day-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* BANNER PRINCIPAL */
@@ -411,6 +457,16 @@ body {
   background: var(--red);
   color: var(--white);
 }
+.music-button {
+  padding: 9px 16px;
+  border-color: var(--dark-red);
+  border-radius: 999px;
+  background: var(--red);
+  color: var(--white);
+}
+.music-button:hover {
+  background: var(--dark-red);
+}
 
 /* TARJETAS + REJILLAS */
 .card-grid {
@@ -461,6 +517,45 @@ body {
   color: var(--dark-red);
   text-decoration: underline;
 }
+
+/* IMÁGENES DE LAS TARJETAS DE INICIO */
+.card-image {
+  display: block;
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+}
+img.card-image {
+  object-fit: cover;
+}
+.card-image--tipos {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  gap: 4px;
+  height: auto;
+  min-height: 140px;
+  padding: 8px;
+  background: var(--light);
+}
+.card-image--tipos .type-badge {
+  padding: 2px 8px;
+  font-size: 11px;
+}
+.card-image--logos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+}
+.card-image--logos img {
+  max-width: 100%;
+  max-height: 40px;
+  object-fit: contain;
+}
 .pokemon-number {
   margin: 0 0 10px;
   color: var(--red);
@@ -478,6 +573,90 @@ body {
   flex-wrap: wrap;
   gap: 6px;
 }
+.pokemon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  border-radius: 8px;
+  background: var(--light);
+}
+.pokemon-img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+}
+.pokemon-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 24px;
+  color: var(--dark-red);
+  font-weight: 600;
+}
+
+/* VENTANA DE DETALLES DEL POKÉMON */
+.detalle {
+  width: min(420px, 90vw);
+  padding: 0;
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+.detalle::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+.detalle-card {
+  position: relative;
+  padding: 24px;
+  text-align: center;
+}
+.detalle-cerrar {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: none;
+  color: var(--gray-text);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+.detalle-cerrar:hover {
+  color: var(--dark-red);
+}
+.detalle-img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+.detalle-numero {
+  margin: 0;
+  color: var(--red);
+  font-size: 14px;
+  font-weight: bold;
+}
+.detalle-nombre {
+  margin: 4px 0 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.detalle-tipos {
+  margin: 0 0 16px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.detalle-datos {
+  margin: 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--gray);
+  list-style: none;
+  text-align: left;
+  font-size: 14px;
+}
+.detalle-datos li {
+  padding: 4px 0;
+}
 .type-card-badge {
   margin: 12px 0 8px;
 }
@@ -485,6 +664,12 @@ body {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
+}
+.type-card--oculto {
+  display: none;
+}
+.tipos-completos .type-card--oculto {
+  display: flex;
 }
 
 /* FILTROS DE LA POKÉDEX */
@@ -570,6 +755,36 @@ body {
 .type-badge.psiquico {
   background: #d16ba5;
 }
+.type-badge.lucha {
+  background: #c03028;
+}
+.type-badge.tierra {
+  background: #927d44;
+}
+.type-badge.volador {
+  background: #6064b0;
+}
+.type-badge.roca {
+  background: #786824;
+}
+.type-badge.fantasma {
+  background: #493963;
+}
+.type-badge.hielo {
+  background: #4090a0;
+}
+.type-badge.dragon {
+  background: #4924a1;
+}
+.type-badge.acero {
+  background: #787887;
+}
+.type-badge.siniestro {
+  background: #49392f;
+}
+.type-badge.bicho {
+  background: #6d7815;
+}
 
 /* LÍNEA DE TIEMPO */
 .timeline {
@@ -624,6 +839,11 @@ body {
   width: 260px;
   min-height: 190px;
 }
+.intro-image {
+  height: 190px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
 
 /* TARJETAS DE ENLACES */
 .link-card {
@@ -640,6 +860,9 @@ body {
   border-radius: var(--radius);
   background: var(--white);
   object-fit: contain;
+}
+.link-body {
+  min-width: 0;
 }
 /* Enlace estirado: el <a> cubre toda la tarjeta, pero el nombre accesible sigue siendo el del sitio */
 .link-name a {
@@ -670,4 +893,78 @@ body {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
+}
+
+/* DISEÑO ADAPTABLE (RESPONSIVE) */
+@media (max-width: 1100px) {
+  .page-layout {
+    grid-template-columns: 235px minmax(0, 1fr);
+  }
+  .right-sidebar {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .right-sidebar > * {
+    flex: 1 1 220px;
+  }
+}
+
+@media (max-width: 820px) {
+  .header {
+    height: auto;
+  }
+  .header-container {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+  .right-sidebar {
+    flex-direction: column;
+  }
+  .card-grid--3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --pad: 16px;
+  }
+  .card-grid--3,
+  .card-grid--2 {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding: 24px;
+  }
+  .hero-title {
+    font-size: 26px;
+  }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .intro-split {
+    flex-direction: column;
+  }
+  .intro-split-media {
+    width: 100%;
+  }
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .filters-select {
+    min-width: 0;
+  }
+  .timeline-item {
+    grid-template-columns: 1fr;
+  }
+  .timeline-year {
+    padding: 8px;
+  }
 }
